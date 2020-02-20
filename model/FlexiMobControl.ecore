@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FlexiMobControl" nsURI="http://autron.hyundai.com/mobilgene/fmob/control"
+    nsPrefix="fmob.control">
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialize" upperBound="-1"
+        eType="#//Set" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Set" abstract="true" interface="true"
+      eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableCondition" upperBound="-1"
+        eType="ecore:EClass FlexiMobModel.ecore#//Condition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Get" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetWithValue" eSuperTypes="#//Set">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass FlexiMobModel.ecore#//Operand"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetWithCreation" eSuperTypes="#//Set">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creation" upperBound="-1"
+        eType="#//Create" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultSetter" eSuperTypes="#//Set"/>
+</ecore:EPackage>

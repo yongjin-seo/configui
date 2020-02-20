@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FlexiMob/src" modelPluginID="FlexiMob" modelName="FlexiMob"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>FlexiMob.ecore</foreignModel>
+  <genPackages prefix="FlexiMob" disposableProviderFactory="true" ecorePackage="FlexiMob.ecore#/">
+    <genClasses ecoreClass="FlexiMob.ecore#//Tool">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMob.ecore#//Tool/editors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMob.ecore#//Tool/models"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="FlexiMobView" ecorePackage="FlexiMobView.ecore#/">
+    <genClasses ecoreClass="FlexiMobView.ecore#//Editor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Editor/sections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Editor/label"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//Section">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Section/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Section/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Section/actionMenu"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobView.ecore#//SectionItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//SectionItem/label"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//ColumnGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//ColumnGroup/items"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//Column">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Column/onDraw"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Column/onChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Column/iconVisible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Column/width"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//Menu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Menu/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Menu/label"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//MenuItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//MenuItem/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//MenuItem/onClick"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//MenuItem/activeColumn"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobView.ecore#//Separator"/>
+    <genClasses image="false" ecoreClass="FlexiMobView.ecore#//MenuComponent"/>
+  </genPackages>
+  <genPackages prefix="FlexiMobModel" ecorePackage="FlexiMobModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobModel.ecore#//ArType">
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/TimeValue"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/NumericString"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ArType/Boolean"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobModel.ecore#//LogicalOperator">
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//LogicalOperator/And"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//LogicalOperator/Or"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//LogicalOperator/Xor"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//LogicalOperator/Not"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobModel.ecore#//ComparisonOperator">
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/Equal"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/NotEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/Less"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/LessEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/Greater"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//ComparisonOperator/GreatorEqual"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobModel.ecore#//UniquenessScope">
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//UniquenessScope/Container"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobModel.ecore#//UniquenessScope/All"/>
+    </genEnums>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//Package/classes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//Package/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//ArElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ArElement/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ArClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ArClass/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArClass/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ArAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ArPrimitiveAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArPrimitiveAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ArRefAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ArRefAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ArEnumAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArEnumAttribute/literals"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//Constraint"/>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//Condition/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//Expression"/>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//LogicalExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//LogicalExpression/operands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//LogicalExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ComparisonExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ComparisonExpression/lvalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ComparisonExpression/rvalue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ComparisonExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//RegularExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//RegularExpression/regex"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//Range"/>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//IntegerRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//IntegerRange/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//IntegerRange/min"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//FloatRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//FloatRange/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//FloatRange/min"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//Uniqueness">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//Uniqueness/scope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//Operand"/>
+    <genClasses image="false" ecoreClass="FlexiMobModel.ecore#//ConstValue"/>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//ReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ReferenceValue/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//StringConst">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//StringConst/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//IntegerConst">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//IntegerConst/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//FloatConst">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//FloatConst/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//TimeConst">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//TimeConst/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobModel.ecore#//BooleanConst">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//BooleanConst/value"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="FlexiMobControl" ecorePackage="FlexiMobControl.ecore#/">
+    <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Action"/>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//Create">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Create/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Create/initialize"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Set">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Set/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Set/enableCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//Get">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Get/target"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//Delete">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Delete/target"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//SetWithValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//SetWithValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//SetWithCreation">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//SetWithCreation/creation"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//DefaultSetter"/>
+  </genPackages>
+</genmodel:GenModel>
