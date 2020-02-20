@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmob:Tool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fmob="http://autron.hyundai.com/mobilgene/fmob" xmlns:fmob.model="http://autron.hyundai.com/mobilgene/fmob/model">
+  <models name="Service">
+    <classes name="ServiceInterface">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="namespaces" upperBound="-1" type="//@models.0/@classes.8"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="events" upperBound="-1" type="//@models.0/@classes.1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="methods" upperBound="-1" type="//@models.0/@classes.2"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="fields" upperBound="-1" type="//@models.0/@classes.3"/>
+    </classes>
+    <classes name="VariableDataPrototype">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="type" lowerBound="1" upperBound="1" type="//@models.0/@classes.5"/>
+    </classes>
+    <classes name="ClientServerOperation">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="arguments" upperBound="-1" type="//@models.0/@classes.4"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="fireAndForget" upperBound="1" type="Boolean"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="possibleApErrors" upperBound="-1" type="//@models.0/@classes.6"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="possibleApErrorSets" upperBound="-1" type="//@models.0/@classes.7"/>
+    </classes>
+    <classes name="Field">
+      <constraints xsi:type="fmob.model:Condition">
+        <expression xsi:type="fmob.model:LogicalExpression" operator="Xor">
+          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.2"/>
+          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.3"/>
+          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.4"/>
+        </expression>
+      </constraints>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="type" lowerBound="1" upperBound="1" type="//@models.0/@classes.5"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="hasGetter" upperBound="1" type="Boolean"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="hasSetter" upperBound="1" type="Boolean"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="hasNotifier" upperBound="1" type="Boolean"/>
+    </classes>
+    <classes name="ArgumentDataPrototype">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="direction" lowerBound="1" upperBound="1">
+        <literals>in</literals>
+        <literals>out</literals>
+        <literals>inout</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="type" lowerBound="1" upperBound="1" type="//@models.0/@classes.5"/>
+    </classes>
+    <classes name="ApplicationDataType">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+    </classes>
+    <classes name="ApApplicationError"/>
+    <classes name="ApApplicationErrorSet"/>
+    <classes name="SymbolProps">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+    </classes>
+  </models>
+</fmob:Tool>
