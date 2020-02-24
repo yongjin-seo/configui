@@ -27,7 +27,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ArType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArRefAttribute" eSuperTypes="#//ArAttribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ArClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" upperBound="-1" eType="#//ArClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArEnumAttribute" eSuperTypes="#//ArAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="literals" upperBound="-1"

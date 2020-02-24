@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FlexiMob/src" modelPluginID="FlexiMob" modelName="FlexiMob"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>FlexiMob.ecore</foreignModel>
   <genPackages prefix="FlexiMob" disposableProviderFactory="true" ecorePackage="FlexiMob.ecore#/">
     <genClasses ecoreClass="FlexiMob.ecore#//Tool">
@@ -19,6 +20,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Section/items"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//Section/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Section/actionMenu"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Section/subSections"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FlexiMobView.ecore#//SectionItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//SectionItem/label"/>
@@ -87,6 +89,7 @@
     <genClasses ecoreClass="FlexiMobModel.ecore#//ArAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/lowerBound"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/upperBound"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ArAttribute/class"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobModel.ecore#//ArPrimitiveAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArPrimitiveAttribute/type"/>
