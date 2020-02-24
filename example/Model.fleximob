@@ -51,4 +51,158 @@
       <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
     </classes>
   </models>
+  <models name="Persistency">
+    <classes name="PersistencyKeyValueDatabaseInterface">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="minimumSustainedSize" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="redundancy" upperBound="1">
+        <literals>redundant</literals>
+        <literals>none</literals>
+        <literals>redundantPerKey</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="dataElements" upperBound="-1" type="//@models.1/@classes.1"/>
+    </classes>
+    <classes name="PersistencyDataElement">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>overwrite</literals>
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="type" lowerBound="1" upperBound="1" type="//@models.2/@classes.0"/>
+    </classes>
+    <classes name="PersistencyFileProxyInterface">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="minimumSustainedSize" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="redundancy" upperBound="1">
+        <literals>redundant</literals>
+        <literals>none</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="encoding" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="maxNumberOfFiles" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="fileProxies" upperBound="-1" type="//@models.1/@classes.3"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="category" lowerBound="1" upperBound="1">
+        <literals>TEXT_FILE</literals>
+        <literals>BINARY_FILE</literals>
+      </attributes>
+    </classes>
+    <classes name="PersistencyFileProxy">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>overwrite</literals>
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="contentUri" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="fileName" lowerBound="1" upperBound="1"/>
+    </classes>
+    <classes name="PersistencyKeyValueDatabase">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="relatedInterface" lowerBound="1" upperBound="1" type="//@models.1/@classes.0"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="uri" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="maximumAllowedSize" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="minimumSustainedSize" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="redundancyHandlings" upperBound="-1" type="//@models.1/@classes.11 //@models.1/@classes.12"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" lowerBound="1" upperBound="1">
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="keyValuePairs" upperBound="-1" type="//@models.1/@classes.5"/>
+    </classes>
+    <classes name="PersistencyKeyValuePair">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="valueDataType" lowerBound="1" upperBound="1" type="//@models.2/@classes.0"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="initValue" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>overwrite</literals>
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+    </classes>
+    <classes name="PersistencyFileArray">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="relatedInterface" lowerBound="1" upperBound="1" type="//@models.1/@classes.2"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="uri" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="maximumAllowedSize" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="minimumSustainedSize" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="redundancyHandlings" upperBound="-1" type="//@models.1/@classes.11 //@models.1/@classes.12"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" lowerBound="1" upperBound="1">
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="files" upperBound="-1" type="//@models.1/@classes.7"/>
+    </classes>
+    <classes name="PersistencyFile">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="fileName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="contentUri" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="updateStrategy" upperBound="1">
+        <literals>overwrite</literals>
+        <literals>keepExisting</literals>
+        <literals>delete</literals>
+      </attributes>
+    </classes>
+    <classes name="PersistencyPortPrototypeToKeyValueDatabaseMapping">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="keyValueStoreage" lowerBound="1" upperBound="1" type="//@models.1/@classes.4"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="portPrototype" upperBound="1" type="//@models.1/@classes.10"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="process" lowerBound="1" upperBound="1" type="//@models.3/@classes.1"/>
+    </classes>
+    <classes name="PersistencyPortProtytpeToFileArrayMapping">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="persistencyFileArray" lowerBound="1" upperBound="1" type="//@models.1/@classes.6"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="portPrototype" upperBound="1" type="//@models.1/@classes.10"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="process" lowerBound="1" upperBound="1" type="//@models.3/@classes.1"/>
+    </classes>
+    <classes name="PortPrototypeInExecutableInstanceRef">
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="base" upperBound="1" type="//@models.3/@classes.0"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="contextRootSwComponentPrototype" lowerBound="1" upperBound="1" type="//@models.3/@classes.2"/>
+      <attributes xsi:type="fmob.model:ArRefAttribute" name="targetPortPrototype" lowerBound="1" upperBound="1" type="//@models.3/@classes.3 //@models.3/@classes.4 //@models.3/@classes.5"/>
+    </classes>
+    <classes name="PersistencyRedundancyCrc">
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="algorithm" lowerBound="1" upperBound="1">
+        <literals>CRC_J1850</literals>
+        <literals>CRC_CCITT_FALSE</literals>
+        <literals>CRC_ETHERNET</literals>
+        <literals>CRC_0x42F0E1EBA9EA3693</literals>
+        <literals>CRC_8H2F</literals>
+        <literals>CRC_16ARC</literals>
+        <literals>CRC_32P4</literals>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="length" lowerBound="1" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="scope" upperBound="1">
+        <literals>Key</literals>
+        <literals>Database</literals>
+        <literals>File</literals>
+      </attributes>
+    </classes>
+    <classes name="PersistencyRedundancyMOutOfN">
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="m" lowerBound="1" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="n" lowerBound="1" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArEnumAttribute" name="scope" upperBound="1">
+        <literals>Key</literals>
+        <literals>Database</literals>
+        <literals>File</literals>
+      </attributes>
+    </classes>
+  </models>
+  <models name="DataType">
+    <classes name="CppImplementationDataType"/>
+  </models>
+  <models name="Application">
+    <classes name="Executable"/>
+    <classes name="Process"/>
+    <classes name="RootSwComponentPrototype"/>
+    <classes name="PPortPrototype"/>
+    <classes name="RPortPrototype"/>
+    <classes name="PRPortPrototype"/>
+  </models>
 </fmob:Tool>

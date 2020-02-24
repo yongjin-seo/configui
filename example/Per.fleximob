@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmob:Tool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fmob="http://autron.hyundai.com/mobilgene/fmob" xmlns:fmob.control="http://autron.hyundai.com/mobilgene/fmob/control" xmlns:fmob.model="http://autron.hyundai.com/mobilgene/fmob/model" xmlns:fmob.view="http://autron.hyundai.com/mobilgene/fmob/view">
+  <editors label="Persistency">
+    <sections label="Persistency Design">
+      <subSections label="Key-Value Interface">
+        <items xsi:type="fmob.view:Column" label="Persistency Interface">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Sustained Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Redundancy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Update Strategy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Data Elements">
+          <items label="Element">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="Data Type (IDT)">
+            <onDraw>
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.2"/>
+            </onDraw>
+          </items>
+          <items label="Update Strategy">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Interface">
+            <onClick xsi:type="fmob.control:Create">
+              <target href="Model.fleximob#//@models.1/@classes.0"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Interface" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.0"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.4"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.1"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.4/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.1"/>
+            </onClick>
+          </items>
+        </actionMenu>
+      </subSections>
+      <subSections label="File Proxy Interface">
+        <items xsi:type="fmob.view:Column" label="Persistency Interface">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Category">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.7"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Encoding">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.4"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Sustained Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Redundancy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Update Strategy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Max #Files">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.5"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="File Proxies">
+          <items label="File Proxy">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="File Name">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.3"/>
+            </onDraw>
+          </items>
+          <items label="Content Uri">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.2"/>
+            </onDraw>
+          </items>
+          <items label="Update Strategy">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create File Proxy Interface">
+            <onClick xsi:type="fmob.control:Create">
+              <target href="Model.fleximob#//@models.1/@classes.2"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy Interface" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.2"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.6"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.3"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.7/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.3"/>
+            </onClick>
+          </items>
+        </actionMenu>
+      </subSections>
+    </sections>
+    <sections label="Persistency Deployment">
+      <subSections label="Key-Value Deployment">
+        <items xsi:type="fmob.view:Column" label="Key-Value Datebase">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Related Interface ">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Process">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Uri">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Update Strategy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.6"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Max. Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Min. Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.4"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
+          <items label="Redundancy Handling"/>
+          <items label="Scope">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
+            </onDraw>
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
+          <items label="Algorithm">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="Length">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
+          <items label="M">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="N">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Key-Value Pairs">
+          <items label="Pair">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="Data Type (IDT)">
+            <onDraw>
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.1"/>
+            </onDraw>
+          </items>
+          <items label="Init Value"/>
+          <items label="Update Strategy">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.3"/>
+            </onDraw>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Database">
+            <onClick xsi:type="fmob.control:Create">
+              <target href="Model.fleximob#//@models.1/@classes.4"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Database" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.4"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.5"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.11"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling " activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.5"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.12"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.7/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.11"/>
+            </onClick>
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.12"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Key-Value Pairs from Key-Value Database Interface" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.7"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.5"/>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.0"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.0"/>
+                  </value>
+                </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.1"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.2"/>
+                  </value>
+                </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.3"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.1"/>
+                  </value>
+                </initialize>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.7"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.5"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.10/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.5"/>
+            </onClick>
+          </items>
+        </actionMenu>
+      </subSections>
+      <subSections label="File Array">
+        <items xsi:type="fmob.view:Column" label="File Array">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Related Interface">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Process">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Uri">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Update Strategy">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.6"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Max. Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Min. Size">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.4"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
+          <items label="Redundancy Handling"/>
+          <items label="Scope">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
+            </onDraw>
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
+          <items label="Algorithm">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="Length">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
+          <items label="M">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="N">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
+            </onDraw>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Files">
+          <items label="File">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.0"/>
+            </onDraw>
+          </items>
+          <items label="File Name">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.1"/>
+            </onDraw>
+          </items>
+          <items label="Content Uri">
+            <onDraw>
+              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.2"/>
+            </onDraw>
+          </items>
+          <items label="Update Strategy">
+            <onDraw>
+              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.3"/>
+            </onDraw>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create File Array">
+            <onClick xsi:type="fmob.control:Create">
+              <target href="Model.fleximob#//@models.1/@classes.6"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete File Array" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.6"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.5"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.11"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling ">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.5"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.12"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.7/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.11"/>
+            </onClick>
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.12"/>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Files from File Proxy Interface" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.7"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.7"/>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.0"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.0"/>
+                  </value>
+                </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.1"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.3"/>
+                  </value>
+                </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.3"/>
+                  <value xsi:type="fmob.model:ReferenceValue">
+                    <ref xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.1"/>
+                  </value>
+                </initialize>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
+            <onClick xsi:type="fmob.control:SetWithCreation">
+              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.7"/>
+              <creation>
+                <target href="Model.fleximob#//@models.1/@classes.7"/>
+              </creation>
+            </onClick>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.10/@items.0">
+            <onClick xsi:type="fmob.control:Delete">
+              <target href="Model.fleximob#//@models.1/@classes.7"/>
+            </onClick>
+          </items>
+        </actionMenu>
+      </subSections>
+      <subSections label="Persistency Mapping">
+        <items xsi:type="fmob.view:Column" label="PersistencyPort-Process Map">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.0"/>
+          </onDraw>
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Persistency Deployment">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.1"/>
+          </onDraw>
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Persistency Interface">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
+          </onDraw>
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Port">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.10/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Process">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
+          </onDraw>
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
+          </onDraw>
+        </items>
+      </subSections>
+    </sections>
+  </editors>
+</fmob:Tool>
