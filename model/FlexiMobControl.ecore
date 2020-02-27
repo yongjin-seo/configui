@@ -4,7 +4,7 @@
     nsPrefix="fmob.control">
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="enableCondition" upperBound="-1"
-        eType="ecore:EClass FlexiMobModel.ecore#//Condition" containment="true"/>
+        eType="ecore:EClass FlexiMobModel.ecore#//ConditionalExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArClass"/>
@@ -15,10 +15,7 @@
       eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArAttribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Get" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArAttribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bind" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass FlexiMobModel.ecore#//ArClass"/>
   </eClassifiers>
@@ -30,5 +27,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="creation" upperBound="-1"
         eType="#//Create" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefaultSetter" eSuperTypes="#//Set"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BindToConst" eSuperTypes="#//Bind">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass FlexiMobModel.ecore#//Operand"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BindToAttribute" eSuperTypes="#//Bind">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+        eType="ecore:EClass FlexiMobModel.ecore#//ArAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

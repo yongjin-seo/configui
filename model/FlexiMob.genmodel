@@ -89,7 +89,6 @@
     <genClasses ecoreClass="FlexiMobModel.ecore#//ArAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/lowerBound"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArAttribute/upperBound"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference FlexiMobModel.ecore#//ArAttribute/class"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobModel.ecore#//ArPrimitiveAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobModel.ecore#//ArPrimitiveAttribute/type"/>
@@ -174,6 +173,5 @@
     <genClasses ecoreClass="FlexiMobControl.ecore#//SetWithCreation">
       <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//SetWithCreation/creation"/>
     </genClasses>
-    <genClasses ecoreClass="FlexiMobControl.ecore#//DefaultSetter"/>
   </genPackages>
 </genmodel:GenModel>

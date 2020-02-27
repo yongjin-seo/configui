@@ -32,6 +32,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArEnumAttribute" eSuperTypes="#//ArAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="literals" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ArType">
     <eLiterals name="String"/>
@@ -42,8 +43,10 @@
     <eLiterals name="Boolean" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//Constraint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="#//Operand"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" interface="true"
@@ -114,5 +117,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanConst" eSuperTypes="#//ConstValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NullValue" eSuperTypes="#//ConstValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceOf" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="#//ArClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerOf" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="#//ArClass"/>
   </eClassifiers>
 </ecore:EPackage>
