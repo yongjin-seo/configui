@@ -20,13 +20,7 @@
       <attributes xsi:type="fmob.model:ArRefAttribute" name="possibleApErrorSets" upperBound="-1" type="//@models.0/@classes.7"/>
     </classes>
     <classes name="Field">
-      <constraints xsi:type="fmob.model:Condition">
-        <expression xsi:type="fmob.model:LogicalExpression" operator="Xor">
-          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.2"/>
-          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.3"/>
-          <operands xsi:type="fmob.model:ReferenceValue" ref="//@models.0/@classes.3/@attributes.4"/>
-        </expression>
-      </constraints>
+      <constraints xsi:type="fmob.model:ConditionalExpression"/>
       <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="shortName" lowerBound="1" upperBound="1"/>
       <attributes xsi:type="fmob.model:ArRefAttribute" name="type" lowerBound="1" upperBound="1" type="//@models.0/@classes.5"/>
       <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="hasGetter" upperBound="1" type="Boolean"/>
@@ -177,16 +171,86 @@
         <literals>CRC_16ARC</literals>
         <literals>CRC_32P4</literals>
       </attributes>
-      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="length" lowerBound="1" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="length" lowerBound="1" upperBound="1" type="Integer">
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_J1850"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="8"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_CCITT_FALSE"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="16"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_ETHERNET"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="32"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_0x42F0E1EBA9EA3693"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="64"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_8H2F"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="8"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_16ARC"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="16"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.11/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:StringConst" value="CRC_32P4"/>
+          </condition>
+          <then xsi:type="fmob.model:IntegerConst" value="32"/>
+        </constraints>
+      </attributes>
       <attributes xsi:type="fmob.model:ArEnumAttribute" name="scope" upperBound="1">
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ContainerOf" class="//@models.1/@classes.4"/>
+        </constraints>
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ContainerOf" class="//@models.1/@classes.6"/>
+        </constraints>
         <literals>Key</literals>
         <literals>Database</literals>
         <literals>File</literals>
       </attributes>
     </classes>
     <classes name="PersistencyRedundancyMOutOfN">
-      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="m" lowerBound="1" upperBound="1" type="Integer"/>
-      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="n" lowerBound="1" upperBound="1" type="Integer"/>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="m" lowerBound="1" upperBound="1" type="Integer">
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression" operator="LessEqual">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.12/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.12/@attributes.1"/>
+          </condition>
+        </constraints>
+      </attributes>
+      <attributes xsi:type="fmob.model:ArPrimitiveAttribute" name="n" lowerBound="1" upperBound="1" type="Integer">
+        <constraints xsi:type="fmob.model:ConditionalExpression">
+          <condition xsi:type="fmob.model:ComparisonExpression" operator="LessEqual">
+            <lvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.12/@attributes.0"/>
+            <rvalue xsi:type="fmob.model:ReferenceValue" ref="//@models.1/@classes.12/@attributes.1"/>
+          </condition>
+        </constraints>
+      </attributes>
       <attributes xsi:type="fmob.model:ArEnumAttribute" name="scope" upperBound="1">
         <literals>Key</literals>
         <literals>Database</literals>

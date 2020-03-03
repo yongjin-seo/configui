@@ -4,40 +4,40 @@
     <sections label="Persistency Design">
       <subSections label="Key-Value Interface">
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.0"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Sustained Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Redundancy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.2"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Data Elements">
           <items label="Element">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Data Type (IDT)">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.2"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Update Strategy">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <actionMenu>
@@ -69,60 +69,60 @@
       </subSections>
       <subSections label="File Proxy Interface">
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.0"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Category">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.7"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Encoding">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.4"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Sustained Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Redundancy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.2"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max #Files">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.5"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="File Proxies">
           <items label="File Proxy">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="File Name">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.3"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Content Uri">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.2"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Update Strategy">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <actionMenu>
@@ -156,91 +156,106 @@
     <sections label="Persistency Deployment">
       <subSections label="Key-Value Deployment">
         <items xsi:type="fmob.view:Column" label="Key-Value Datebase">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.0"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Related Interface ">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.2"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.6"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max. Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Min. Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.4"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
-          <items label="Redundancy Handling"/>
+          <items label="Redundancy Handling">
+            <onBind xsi:type="fmob.control:BindToConst">
+              <enableCondition>
+                <condition xsi:type="fmob.model:InstanceOf">
+                  <class href="Model.fleximob#//@models.1/@classes.11"/>
+                </condition>
+              </enableCondition>
+              <value xsi:type="fmob.model:StringConst" value="RedundancyCrc"/>
+            </onBind>
+            <onBind xsi:type="fmob.control:BindToConst">
+              <enableCondition>
+                <condition xsi:type="fmob.model:InstanceOf">
+                  <class href="Model.fleximob#//@models.1/@classes.12"/>
+                </condition>
+              </enableCondition>
+              <value xsi:type="fmob.model:StringConst" value="RedundancyMOutOfN"/>
+            </onBind>
+          </items>
           <items label="Scope">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
-            </onDraw>
-            <onDraw>
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Length">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
           <items label="M">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="N">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Key-Value Pairs">
           <items label="Pair">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Data Type (IDT)">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Init Value"/>
           <items label="Update Strategy">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.3"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <actionMenu>
@@ -323,95 +338,110 @@
       </subSections>
       <subSections label="File Array">
         <items xsi:type="fmob.view:Column" label="File Array">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.0"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Related Interface">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.2"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.6"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max. Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Min. Size">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.4"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
-          <items label="Redundancy Handling"/>
+          <items label="Redundancy Handling">
+            <onBind xsi:type="fmob.control:BindToConst">
+              <enableCondition>
+                <condition xsi:type="fmob.model:InstanceOf">
+                  <class href="Model.fleximob#//@models.1/@classes.11"/>
+                </condition>
+              </enableCondition>
+              <value xsi:type="fmob.model:StringConst" value="RedundancyCrc"/>
+            </onBind>
+            <onBind xsi:type="fmob.control:BindToConst">
+              <enableCondition>
+                <condition xsi:type="fmob.model:InstanceOf">
+                  <class href="Model.fleximob#//@models.1/@classes.12"/>
+                </condition>
+              </enableCondition>
+              <value xsi:type="fmob.model:StringConst" value="RedundancyMOutOfN"/>
+            </onBind>
+          </items>
           <items label="Scope">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
-            </onDraw>
-            <onDraw>
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Length">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
           <items label="M">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="N">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Files">
           <items label="File">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.0"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="File Name">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.1"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Content Uri">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.2"/>
-            </onDraw>
+            </onBind>
           </items>
           <items label="Update Strategy">
-            <onDraw>
+            <onBind xsi:type="fmob.control:BindToAttribute">
               <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.3"/>
-            </onDraw>
+            </onBind>
           </items>
         </items>
         <actionMenu>
@@ -494,41 +524,33 @@
       </subSections>
       <subSections label="Persistency Mapping">
         <items xsi:type="fmob.view:Column" label="PersistencyPort-Process Map">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.0"/>
-          </onDraw>
-          <onDraw>
             <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.0"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Deployment">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.1"/>
-          </onDraw>
-          <onDraw>
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
-          </onDraw>
-          <onDraw>
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Port">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.10/@attributes.2"/>
-          </onDraw>
+          </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
-          <onDraw>
+          <onBind xsi:type="fmob.control:BindToAttribute">
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
-          </onDraw>
-          <onDraw>
             <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
-          </onDraw>
+          </onBind>
         </items>
       </subSections>
     </sections>
