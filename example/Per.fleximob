@@ -1,557 +1,884 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fmob:Tool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fmob="http://autron.hyundai.com/mobilgene/fmob" xmlns:fmob.control="http://autron.hyundai.com/mobilgene/fmob/control" xmlns:fmob.model="http://autron.hyundai.com/mobilgene/fmob/model" xmlns:fmob.view="http://autron.hyundai.com/mobilgene/fmob/view">
+<fmob:Tool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fmob="http://autron.hyundai.com/mobilgene/fmob" xmlns:fmob.control="http://autron.hyundai.com/mobilgene/fmob/control" xmlns:fmob.view="http://autron.hyundai.com/mobilgene/fmob/view">
   <editors label="Persistency">
     <sections label="Persistency Design">
       <subSections label="Key-Value Interface">
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.0"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Sustained Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.1"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/minimumSustainedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Redundancy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.2"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/redundancy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/updateStrategy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Data Elements">
           <items label="Element">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Data Type (IDT)">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.2"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/datatype/dataprototypes/AutosarDataPrototype/type"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Update Strategy">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement/updateStrategy"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Interface">
             <onClick xsi:type="fmob.control:Create">
-              <target href="Model.fleximob#//@models.1/@classes.0"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Interface" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.0"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.0/@attributes.4"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.1"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.4/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.1"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
             </onClick>
           </items>
         </actionMenu>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
       </subSections>
       <subSections label="File Proxy Interface">
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.0"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Category">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.7"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Encoding">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.4"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/encoding"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Sustained Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.1"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/minimumSustainedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Redundancy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.2"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/redundancy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/updateStrategy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max #Files">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.5"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/maxNumberOfFiles"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="File Proxies">
           <items label="File Proxy">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+              </bindings>
             </onBind>
           </items>
           <items label="File Name">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.3"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/fileName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Content Uri">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.2"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/contentUri"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Update Strategy">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/updateStrategy"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create File Proxy Interface">
             <onClick xsi:type="fmob.control:Create">
-              <target href="Model.fleximob#//@models.1/@classes.2"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy Interface" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.2"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.2/@attributes.6"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.3"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.7/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.3"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
             </onClick>
           </items>
         </actionMenu>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
       </subSections>
     </sections>
     <sections label="Persistency Deployment">
       <subSections label="Key-Value Deployment">
         <items xsi:type="fmob.view:Column" label="Key-Value Datebase">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.0"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
+          <onChange xsi:type="fmob.control:Create">
+            <initialize xsi:type="fmob.control:SetWithValue">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/keyValueStorage"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+            </initialize>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+          </onChange>
         </items>
         <items xsi:type="fmob.view:Column" label="Related Interface ">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
+          <onBind xsi:type="fmob.control:BindToExtendAttribute" tAttribute="relatedInterface">
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
+          <onChange xsi:type="fmob.control:SetWithValue">
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+          </onChange>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/process"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.2"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/uri"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.6"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/updateStrategy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max. Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/maximumAllowedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Min. Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.4"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/minimumSustainedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling">
-            <onBind xsi:type="fmob.control:BindToConst">
-              <enableCondition>
-                <condition xsi:type="fmob.model:InstanceOf">
-                  <class href="Model.fleximob#//@models.1/@classes.11"/>
-                </condition>
-              </enableCondition>
-              <value xsi:type="fmob.model:StringConst" value="RedundancyCrc"/>
-            </onBind>
-            <onBind xsi:type="fmob.control:BindToConst">
-              <enableCondition>
-                <condition xsi:type="fmob.model:InstanceOf">
-                  <class href="Model.fleximob#//@models.1/@classes.12"/>
-                </condition>
-              </enableCondition>
-              <value xsi:type="fmob.model:StringConst" value="RedundancyMOutOfN"/>
-            </onBind>
-          </items>
-          <items label="Scope">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
+            <onBind xsi:type="fmob.control:BindToMany">
+              <bindings xsi:type="fmob.control:BindToConst">
+                <value xsi:type="fmob.control:StringConst" value="RedundancyHandlingCrc"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToConst">
+                <value xsi:type="fmob.control:StringConst" value="RedundancyHandlingMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/algorithmFamily"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Length">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/length"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
           <items label="M">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/m"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
           <items label="N">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/n"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Key-Value Pairs">
           <items label="Pair">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Data Type (IDT)">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/valueDataType"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </bindings>
             </onBind>
           </items>
-          <items label="Init Value"/>
+          <items label="Init Value">
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/initValue"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </bindings>
+            </onBind>
+          </items>
           <items label="Update Strategy">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.3"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/updateStrategy"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Database">
             <onClick xsi:type="fmob.control:Create">
-              <target href="Model.fleximob#//@models.1/@classes.4"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Database" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.4"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.5"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.11"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling " activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.5"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.12"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.7/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.11"/>
-            </onClick>
-            <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.12"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Key-Value Pairs from Key-Value Database Interface" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
-            <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.7"/>
+            <onClick xsi:type="fmob.control:SetWithGenerate">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.5"/>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.0"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.0"/>
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                   </value>
                 </initialize>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.1"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.2"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/valueDataType"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+                    <rAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/datatype/dataprototypes/AutosarDataPrototype/type"/>
                   </value>
                 </initialize>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.5/@attributes.3"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.1/@attributes.1"/>
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/updateStrategy"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement/updateStrategy"/>
                   </value>
                 </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/initValue"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/comspec/PersistencyDataProvidedComSpec"/>
+                    <rAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/comspec/PersistencyDataProvidedComSpec/initValue"/>
+                  </value>
+                </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/initValue"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/comspec/PersistencyDataRequiredComSpec"/>
+                    <rAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/comspec/PersistencyDataRequiredComSpec/initValue"/>
+                  </value>
+                </initialize>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
               </creation>
+              <srcBinding xsi:type="fmob.control:BindToMany" bindingType="All">
+                <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+                  <bindings xsi:type="fmob.control:BindToExtendAttribute" tAttribute="relatedInterface">
+                    <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                  </bindings>
+                  <bindings xsi:type="fmob.control:BindToAttribute">
+                    <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                    <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+                  </bindings>
+                </bindings>
+                <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+                  <bindings xsi:type="fmob.control:BindToAttribute">
+                    <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/portPrototype"/>
+                    <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+                  </bindings>
+                  <bindings xsi:type="fmob.control:BindToAttribute">
+                    <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
+                    <tClass href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
+                  </bindings>
+                  <bindings xsi:type="fmob.control:BindToMany">
+                    <bindings xsi:type="fmob.control:BindToAttribute">
+                      <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/components/AbstractProvidedPortPrototype/providedComSpecs"/>
+                      <tClass href="autosar447.ecore#//swcomponent/components/PPortPrototype"/>
+                    </bindings>
+                    <bindings xsi:type="fmob.control:BindToAttribute">
+                      <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/components/AbstractProvidedPortPrototype/providedComSpecs"/>
+                      <tClass href="autosar447.ecore#//swcomponent/components/PRPortPrototype"/>
+                    </bindings>
+                  </bindings>
+                </bindings>
+                <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+                  <bindings xsi:type="fmob.control:BindToAttribute">
+                    <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/portPrototype"/>
+                    <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+                  </bindings>
+                  <bindings xsi:type="fmob.control:BindToAttribute">
+                    <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
+                    <tClass href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
+                  </bindings>
+                  <bindings xsi:type="fmob.control:BindToMany">
+                    <bindings xsi:type="fmob.control:BindToAttribute">
+                      <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/components/AbstractRequiredPortPrototype/requiredComSpecs"/>
+                      <tClass href="autosar447.ecore#//swcomponent/components/RPortPrototype"/>
+                    </bindings>
+                    <bindings xsi:type="fmob.control:BindToAttribute">
+                      <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//swcomponent/components/AbstractRequiredPortPrototype/requiredComSpecs"/>
+                      <tClass href="autosar447.ecore#//swcomponent/components/PRPortPrototype"/>
+                    </bindings>
+                  </bindings>
+                </bindings>
+              </srcBinding>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.7"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.5"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.10/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.5"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
             </onClick>
           </items>
         </actionMenu>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
       </subSections>
       <subSections label="File Array">
         <items xsi:type="fmob.view:Column" label="File Array">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.0"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Related Interface">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/process"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.2"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/uri"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.6"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/updateStrategy"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Max. Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.3"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/maximumAllowedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Min. Size">
           <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.4"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/minimumSustainedSize"/>
+            <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling">
-            <onBind xsi:type="fmob.control:BindToConst">
-              <enableCondition>
-                <condition xsi:type="fmob.model:InstanceOf">
-                  <class href="Model.fleximob#//@models.1/@classes.11"/>
-                </condition>
-              </enableCondition>
-              <value xsi:type="fmob.model:StringConst" value="RedundancyCrc"/>
-            </onBind>
-            <onBind xsi:type="fmob.control:BindToConst">
-              <enableCondition>
-                <condition xsi:type="fmob.model:InstanceOf">
-                  <class href="Model.fleximob#//@models.1/@classes.12"/>
-                </condition>
-              </enableCondition>
-              <value xsi:type="fmob.model:StringConst" value="RedundancyMOutOfN"/>
-            </onBind>
-          </items>
-          <items label="Scope">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.2"/>
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.2"/>
+            <onBind xsi:type="fmob.control:BindToMany">
+              <bindings xsi:type="fmob.control:BindToConst">
+                <value xsi:type="fmob.control:StringConst" value="RedundancyHandlingCrc"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToConst">
+                <value xsi:type="fmob.control:StringConst" value="RedundancyHandlingMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/algorithmFamily"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Length">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.11/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/length"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
           <items label="M">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/m"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
           <items label="N">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.12/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/n"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Files">
           <items label="File">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.0"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+              </bindings>
             </onBind>
           </items>
           <items label="File Name">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.1"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/fileName"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Content Uri">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.2"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/contentUri"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+              </bindings>
             </onBind>
           </items>
           <items label="Update Strategy">
-            <onBind xsi:type="fmob.control:BindToAttribute">
-              <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.3"/>
+            <onBind xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/updateStrategy"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+              </bindings>
             </onBind>
           </items>
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create File Array">
             <onClick xsi:type="fmob.control:Create">
-              <target href="Model.fleximob#//@models.1/@classes.6"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Array" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.6"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.5"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.11"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling ">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.5"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.12"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </creation>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.7/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.11"/>
-            </onClick>
-            <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.12"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Files from File Proxy Interface" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
-            <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.7"/>
+            <onClick xsi:type="fmob.control:SetWithGenerate">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
               <creation>
-                <target href="Model.fleximob#//@models.1/@classes.7"/>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.0"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.0"/>
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                   </value>
                 </initialize>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.1"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.3"/>
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/fileName"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/fileName"/>
                   </value>
                 </initialize>
                 <initialize xsi:type="fmob.control:SetWithValue">
-                  <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.7/@attributes.3"/>
-                  <value xsi:type="fmob.model:ReferenceValue">
-                    <ref xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.1/@classes.3/@attributes.1"/>
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/contentUri"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/contentUri"/>
                   </value>
                 </initialize>
+                <initialize xsi:type="fmob.control:SetWithValue">
+                  <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile/updateStrategy"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+                  <value xsi:type="fmob.control:ReferenceValue">
+                    <rClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
+                    <rAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy/updateStrategy"/>
+                  </value>
+                </initialize>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
               </creation>
+              <srcBinding xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+                <bindings xsi:type="fmob.control:BindToExtendAttribute" tAttribute="relatedInterface">
+                  <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                </bindings>
+                <bindings xsi:type="fmob.control:BindToAttribute">
+                  <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+                  <tClass href="autosar447.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+                </bindings>
+              </srcBinding>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onClick xsi:type="fmob.control:SetWithCreation">
-              <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.7"/>
-              <creation>
-                <target href="Model.fleximob#//@models.1/@classes.7"/>
-              </creation>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onClick>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.10/@items.0">
             <onClick xsi:type="fmob.control:Delete">
-              <target href="Model.fleximob#//@models.1/@classes.7"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
             </onClick>
           </items>
         </actionMenu>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
       </subSections>
       <subSections label="Persistency Mapping">
         <items xsi:type="fmob.view:Column" label="PersistencyPort-Process Map">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.0"/>
-            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.0"/>
+          <onBind xsi:type="fmob.control:BindToMany">
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+            </bindings>
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar447.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+            </bindings>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Deployment">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.1"/>
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.1"/>
+          <onBind xsi:type="fmob.control:BindToMany">
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/keyValueStorage"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+            </bindings>
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/persistencyFileArray"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+            </bindings>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Interface">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.4/@attributes.1"/>
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.6/@attributes.1"/>
+          <onBind xsi:type="fmob.control:BindToMany">
+            <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/keyValueStorage"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToExtendAttribute" tAttribute="relatedInterface">
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+              </bindings>
+            </bindings>
+            <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/persistencyFileArray"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToExtendAttribute" tAttribute="relatedInterface">
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindings>
+            </bindings>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Port">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.10/@attributes.2"/>
+          <onBind xsi:type="fmob.control:BindToMany">
+            <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/portPrototype"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
+              </bindings>
+            </bindings>
+            <bindings xsi:type="fmob.control:BindToMany" bindingType="Sequence">
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/portPrototype"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+              </bindings>
+              <bindings xsi:type="fmob.control:BindToAttribute">
+                <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
+                <tClass href="autosar447.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
+              </bindings>
+            </bindings>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Process">
-          <onBind xsi:type="fmob.control:BindToAttribute">
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.8/@attributes.3"/>
-            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.1/@classes.9/@attributes.3"/>
+          <onBind xsi:type="fmob.control:BindToMany">
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/process"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+            </bindings>
+            <bindings xsi:type="fmob.control:BindToAttribute">
+              <tAttribute xsi:type="ecore:EReference" href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/process"/>
+              <tClass href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+            </bindings>
           </onBind>
         </items>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+        <rootObjects href="autosar447.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
       </subSections>
     </sections>
   </editors>
