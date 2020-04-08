@@ -15,6 +15,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subSections" upperBound="-1"
         eType="#//Section" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootObjects" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SectionItem" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,6 +32,8 @@
         eType="ecore:EClass FlexiMobControl.ecore#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableCondition" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="#//MenuComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"

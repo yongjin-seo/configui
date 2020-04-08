@@ -4,7 +4,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="Tool">
     <eStructuralFeatures xsi:type="ecore:EReference" name="editors" upperBound="-1"
         eType="ecore:EClass FlexiMobView.ecore#//Editor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
-        eType="ecore:EClass FlexiMobModel.ecore#//Package" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -25,14 +25,6 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated FlexiMob -->
       <package
-            uri="http://autron.hyundai.com/mobilgene/fmob/model"
-            class="FlexiMobModel.FlexiMobModelPackage"
-            genModel="model/FlexiMob.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated FlexiMob -->
-      <package
             uri="http://autron.hyundai.com/mobilgene/fmob/control"
             class="FlexiMobControl.FlexiMobControlPackage"
             genModel="model/FlexiMob.genmodel"/>
