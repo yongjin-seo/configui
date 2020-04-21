@@ -25,25 +25,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//Column" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//SectionItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="onBind" upperBound="-1"
-        eType="ecore:EClass FlexiMobControl.ecore#//Bind" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="onChange" upperBound="-1"
-        eType="ecore:EClass FlexiMobControl.ecore#//Action" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//SectionItem FlexiMobControl.ecore#//Bindable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableCondition" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="#//MenuComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//MenuComponent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MenuItem" eSuperTypes="#//MenuComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="MenuItem" eSuperTypes="#//MenuComponent FlexiMobControl.ecore#//Triggerable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="onClick" upperBound="-1"
-        eType="ecore:EClass FlexiMobControl.ecore#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activeColumn" upperBound="-1"
         eType="#//Column"/>
   </eClassifiers>
