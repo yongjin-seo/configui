@@ -3,8 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FlexiMobControl" nsURI="http://autron.hyundai.com/mobilgene/fmob/control"
     nsPrefix="fmob.control">
   <eClassifiers xsi:type="ecore:EClass" name="Script" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oclConstraints" upperBound="-1"
         eType="#//OclQuery" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regexConstraints" upperBound="-1"
+        eType="#//Regex" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OclQuery" eSuperTypes="#//Script">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classContext" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
@@ -24,6 +26,8 @@
       eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bind" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parents" eType="#//Bind"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acceptableValue" eType="#//OclQuery"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action"/>
@@ -46,5 +50,8 @@
     <eLiterals name="READ" value="2"/>
     <eLiterals name="UPDATE" value="3"/>
     <eLiterals name="DELETE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Regex" eSuperTypes="#//Script">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -26,8 +26,9 @@
         eType="#//Column" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//SectionItem FlexiMobControl.ecore#//Bindable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editingMethod" eType="#//CellEditorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menu" eSuperTypes="#//MenuComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
@@ -41,4 +42,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Separator" eSuperTypes="#//MenuComponent"/>
   <eClassifiers xsi:type="ecore:EClass" name="MenuComponent" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="CellEditorType">
+    <eLiterals name="Text"/>
+    <eLiterals name="CheckBox" value="1"/>
+    <eLiterals name="ComboBox" value="2"/>
+    <eLiterals name="Dialog" value="3"/>
+    <eLiterals name="AutoFill" value="9"/>
+    <eLiterals name="None" value="10"/>
+  </eClassifiers>
 </ecore:EPackage>
