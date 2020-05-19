@@ -2,8 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gautosar" nsURI="http://artop.org/gautosar" nsPrefix="">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="modelPluginVersion" value="4.12.0"/>
-    <details key="editPluginVersion" value="4.12.0"/>
+    <details key="modelPluginVersion" value="4.13.0"/>
+    <details key="editPluginVersion" value="4.13.0"/>
   </eAnnotations>
   <eSubpackages name="ggenericstructure" nsURI="http://artop.org/gautosar/gs" nsPrefix="">
     <eSubpackages name="gprimitivetypes" nsURI="http://artop.org/gautosar/gs/pt" nsPrefix="">
@@ -216,6 +216,11 @@
       </eSubpackages>
       <eSubpackages name="gprimitivetypes" nsURI="http://artop.org/gautosar/gs/gtc/pt"
           nsPrefix="">
+        <eClassifiers xsi:type="ecore:EDataType" name="GByteOrderEnumObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+          <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+            <details key="baseType" value="GByteOrderEnum"/>
+          </eAnnotations>
+        </eClassifiers>
         <eClassifiers xsi:type="ecore:EEnum" name="GByteOrderEnum">
           <eLiterals name="mostSignificantByteFirst" literal="MOST_SIGNIFICANT_BYTE_FIRST"/>
           <eLiterals name="mostSignificantByteLast" value="1" literal="MOST_SIGNIFICANT_BYTE_LAST"/>
@@ -771,6 +776,7 @@
           <details key="4.45" value="AbstractProvidedPortPrototype"/>
           <details key="4.46" value="AbstractProvidedPortPrototype"/>
           <details key="4.47" value="AbstractProvidedPortPrototype"/>
+          <details key="4.48" value="AbstractProvidedPortPrototype"/>
         </eAnnotations>
       </eClassifiers>
       <eSubpackages name="ginstancerefs" nsURI="http://artop.org/gautosar/swc/components/ir"
@@ -821,6 +827,7 @@
             <details key="4.45" value="VariableInAtomicSwcInstanceRef"/>
             <details key="4.46" value="VariableInAtomicSwcInstanceRef"/>
             <details key="4.47" value="VariableInAtomicSwcInstanceRef"/>
+            <details key="4.48" value="VariableInAtomicSwcInstanceRef"/>
           </eAnnotations>
           <eStructuralFeatures xsi:type="ecore:EReference" name="gContextProvidedPort"
               eType="#//gswcomponents/gcomponents/GAbstractProvidedPortPrototype"
@@ -1080,7 +1087,7 @@
           <details key="2.1" value="ArgumentPrototype"/>
           <details key="3.X" value="ArgumentPrototype"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gDirection" eType="#//gswcomponents/gportinterface/GArgumentDirectionEnum"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gDirection" eType="#//gswcomponents/gportinterface/GArgumentDirectionEnumObject"
             volatile="true" transient="true" defaultValueLiteral="IN" unsettable="true"
             derived="true"/>
       </eClassifiers>
@@ -1097,16 +1104,22 @@
             eType="#//gswcomponents/gportinterface/GApplicationError" volatile="true"
             transient="true" derived="true" resolveProxies="false"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="GArgumentDirectionEnum">
-        <eLiterals name="in" literal="IN"/>
-        <eLiterals name="out" value="1" literal="OUT"/>
-        <eLiterals name="inout" value="2" literal="INOUT"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="GArgumentDirectionEnumObject"
+          instanceClassName="org.eclipse.emf.common.util.Enumerator">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="GArgumentDirectionEnum"/>
+        </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="GApplicationError" abstract="true"
           interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="gErrorCode" eType="#//ggenericstructure/gprimitivetypes/Integer"
             volatile="true" transient="true" defaultValueLiteral="0" unsettable="true"
             derived="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="GArgumentDirectionEnum">
+        <eLiterals name="in" literal="IN"/>
+        <eLiterals name="out" value="1" literal="OUT"/>
+        <eLiterals name="inout" value="2" literal="INOUT"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="gdatatype" nsURI="http://artop.org/gautosar/swc/d" nsPrefix="">
@@ -1145,6 +1158,7 @@
             <details key="4.45" value="LimitValueVariationPoint"/>
             <details key="4.46" value="LimitValueVariationPoint"/>
             <details key="4.47" value="LimitValueVariationPoint"/>
+            <details key="4.48" value="LimitValueVariationPoint"/>
           </eAnnotations>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="gValue" unique="false"
               eType="#//ggenericstructure/gprimitivetypes/String" volatile="true"
@@ -1173,10 +1187,11 @@
         </eClassifiers>
         <eSubpackages name="glocalconstraints" nsURI="http://artop.org/gautosar/swc/d/d/lc"
             nsPrefix="">
-          <eClassifiers xsi:type="ecore:EEnum" name="GIntervalTypeEnum">
-            <eLiterals name="closed"/>
-            <eLiterals name="infinite" value="1"/>
-            <eLiterals name="open" value="2"/>
+          <eClassifiers xsi:type="ecore:EDataType" name="GIntervalTypeEnumObject"
+              instanceClassName="org.eclipse.emf.common.util.Enumerator">
+            <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+              <details key="baseType" value="GIntervalTypeEnum"/>
+            </eAnnotations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="GLimit" abstract="true" interface="true"
               eSuperTypes="#//gswcomponents/gdatatype/gdatatypes/glocalconstraints/GAbstractLimit #//ggenericstructure/gvarianthandling/GAttributeValueVariationPoint">
@@ -1190,6 +1205,7 @@
               <details key="4.45" value="LimitValueVariationPoint"/>
               <details key="4.46" value="LimitValueVariationPoint"/>
               <details key="4.47" value="LimitValueVariationPoint"/>
+              <details key="4.48" value="LimitValueVariationPoint"/>
             </eAnnotations>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="GAbstractLimit" abstract="true"
@@ -1200,9 +1216,14 @@
               <details key="4.X" value="NONE"/>
             </eAnnotations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="gIntervalType"
-                eType="#//gswcomponents/gdatatype/gdatatypes/glocalconstraints/GIntervalTypeEnum"
+                eType="#//gswcomponents/gdatatype/gdatatypes/glocalconstraints/GIntervalTypeEnumObject"
                 volatile="true" transient="true" defaultValueLiteral="closed" unsettable="true"
                 derived="true"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="GIntervalTypeEnum">
+            <eLiterals name="closed"/>
+            <eLiterals name="infinite" value="1"/>
+            <eLiterals name="open" value="2"/>
           </eClassifiers>
         </eSubpackages>
       </eSubpackages>
@@ -1922,9 +1943,8 @@
             eType="#//ggenericstructure/gprimitivetypes/Integer" volatile="true" transient="true"
             defaultValueLiteral="0" unsettable="true" derived="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="gByteOrder" ordered="false"
-            eType="#//ggenericstructure/ggeneraltemplateclasses/gprimitivetypes/GByteOrderEnum"
-            volatile="true" transient="true" defaultValueLiteral="MOST_SIGNIFICANT_BYTE_FIRST"
-            unsettable="true" derived="true">
+            eType="#//ggenericstructure/ggeneraltemplateclasses/gprimitivetypes/GByteOrderEnumObject"
+            volatile="true" transient="true" unsettable="true" derived="true">
           <eAnnotations source="feature.mapping">
             <details key="2.1" value="byteOrder/content"/>
             <details key="3.X" value="byteOrder/content"/>
@@ -1944,6 +1964,7 @@
           <details key="4.45" value="PHANTOM"/>
           <details key="4.46" value="PHANTOM"/>
           <details key="4.47" value="PHANTOM"/>
+          <details key="4.48" value="PHANTOM"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="GBaseTypeAbsSize" abstract="true"
@@ -1958,6 +1979,7 @@
           <details key="4.45" value="PHANTOM"/>
           <details key="4.46" value="PHANTOM"/>
           <details key="4.47" value="PHANTOM"/>
+          <details key="4.48" value="PHANTOM"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="gBaseTypeSize" ordered="false"
             eType="#//ggenericstructure/gprimitivetypes/PositiveInteger" volatile="true"
@@ -1975,6 +1997,7 @@
           <details key="4.45" value="PHANTOM"/>
           <details key="4.46" value="PHANTOM"/>
           <details key="4.47" value="PHANTOM"/>
+          <details key="4.48" value="PHANTOM"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="gMaxBaseTypeSize" ordered="false"
             eType="#//ggenericstructure/gprimitivetypes/PositiveInteger" volatile="true"
