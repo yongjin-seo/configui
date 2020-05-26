@@ -61,7 +61,9 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Interface">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabaseInterface, shortName=''}"/>
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabaseInterface, shortName=''}">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+            </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Interface" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:Delete">
@@ -71,8 +73,15 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyDataElement, shortName=''}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
+                </parents>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.4/@items.0">
@@ -92,9 +101,11 @@
         </items>
         <items xsi:type="fmob.view:Column" label="Category" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
-            <oclConstraints query="Set{'TEXT_FILE', 'BINARY_FILE'}" queryType="READ"/>
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+            <acceptableValue query="Set{'TEXT_FILE', 'BINARY_FILE'}" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Encoding">
@@ -171,7 +182,9 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create File Proxy Interface">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileProxyInterface, shortName=''}"/>
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileProxyInterface, shortName=''}">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+            </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy Interface" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:Delete">
@@ -181,8 +194,11 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileProxy, shortName=''}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.7/@items.0">
@@ -235,8 +251,8 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling" editingMethod="None">
-            <onBind xsi:type="fmob.control:OclQuery" query="if self.redundancyHandlings.$idx.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onBind>
           </items>
           <items label="Scope" editingMethod="ComboBox">
@@ -249,32 +265,34 @@
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm" editingMethod="ComboBox">
             <onBind xsi:type="fmob.control:Bind">
-              <oclConstraints query="Set{'CRC_J1850', 'CRC_CCITT_FALSE', 'CRC_ETHERNET', 'CRC_0x42F0E1EBA9EA3693', 'CRC_8H2F', 'CRC_16ARC', 'CRC_32P4'}" queryType="READ"/>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/algorithmFamily"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
+              <acceptableValue query="Set{'CRC_J1850', 'CRC_CCITT_FALSE', 'CRC_ETHERNET', 'CRC_0x42F0E1EBA9EA3693', 'CRC_8H2F', 'CRC_16ARC', 'CRC_32P4'}" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </acceptableValue>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
           <items label="Length" editingMethod="None">
             <onBind xsi:type="fmob.control:Bind">
-              <oclConstraints query="Set{Tuple{algo='CRC_J1850', len=8}, Tuple{algo='CRC_CCITT_FALSE', len=16}, Tuple{algo='CRC_ETHERNET', len=32}, Tuple{algo='CRC_0x42F0E1EBA9EA3693', len=64}, Tuple{algo='CRC_8H2F', len=8}, Tuple{algo='CRC_16ARC', len=16}, Tuple{algo='CRC_32P4', len=32}}->select(e : Tuple(algo:String,len:Integer) | e.algo = self.algorithmFamily).len" queryType="READ">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-              </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/length"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
+              <acceptableValue query="Set{Tuple{algo='CRC_J1850', len=8}, Tuple{algo='CRC_CCITT_FALSE', len=16}, Tuple{algo='CRC_ETHERNET', len=32}, Tuple{algo='CRC_0x42F0E1EBA9EA3693', len=64}, Tuple{algo='CRC_8H2F', len=8}, Tuple{algo='CRC_16ARC', len=16}, Tuple{algo='CRC_32P4', len=32}}->select(e : Tuple(algo:String,len:Integer) | e.algo = self.algorithmFamily).len" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </acceptableValue>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
         </items>
@@ -282,7 +300,7 @@
           <items label="M">
             <onBind xsi:type="fmob.control:Bind">
               <oclConstraints query="self.m &lt;= self.n" queryType="READ">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/m"/>
@@ -291,14 +309,14 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
           <items label="N">
             <onBind xsi:type="fmob.control:Bind">
-              <oclConstraints query="self.m &lt;= self.n">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+              <oclConstraints query="self.m &lt;= self.n" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/n"/>
@@ -307,8 +325,8 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
         </items>
@@ -356,7 +374,9 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Database">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabase, shortName=''}"/>
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabase, shortName=''}">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Database" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:Delete">
@@ -366,14 +386,20 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyCrc}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling " activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyMOutOfN}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.7/@items.0">
@@ -384,14 +410,20 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Key-Value Pairs from Key-Value Database Interface" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.dataElements->collect(d : PersistencyDataElement | Tuple{T=PersistencyKeyValuePair, shortName=d.shortName, valueDataType=d.type})">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValuePair, shortName=''}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.10/@items.0">
@@ -445,8 +477,8 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling" editingMethod="None">
-            <onBind xsi:type="fmob.control:OclQuery" query="if self.redundancyHandlings.$idx.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onBind>
           </items>
           <items label="Scope" editingMethod="ComboBox">
@@ -459,32 +491,37 @@
         <items xsi:type="fmob.view:ColumnGroup" label="+ CRC">
           <items label="Algorithm" editingMethod="ComboBox">
             <onBind xsi:type="fmob.control:Bind">
-              <oclConstraints query="Set{'CRC_J1850', 'CRC_CCITT_FALSE', 'CRC_ETHERNET', 'CRC_0x42F0E1EBA9EA3693', 'CRC_8H2F', 'CRC_16ARC', 'CRC_32P4'}" queryType="READ"/>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/algorithmFamily"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
+              <acceptableValue query="Set{'CRC_J1850', 'CRC_CCITT_FALSE', 'CRC_ETHERNET', 'CRC_0x42F0E1EBA9EA3693', 'CRC_8H2F', 'CRC_16ARC', 'CRC_32P4'}" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </acceptableValue>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
           <items label="Length" editingMethod="None">
             <onBind xsi:type="fmob.control:Bind">
-              <oclConstraints query="Set{Tuple{algo='CRC_J1850', len=8}, Tuple{algo='CRC_CCITT_FALSE', len=16}, Tuple{algo='CRC_ETHERNET', len=32}, Tuple{algo='CRC_0x42F0E1EBA9EA3693', len=64}, Tuple{algo='CRC_8H2F', len=8}, Tuple{algo='CRC_16ARC', len=16}, Tuple{algo='CRC_32P4', len=32}}->select(e : Tuple(algo:String,len:Integer) | e.algo = self.algorithmFamily).len" queryType="READ">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-              </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc/length"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
+              <acceptableValue query="Set{Tuple{algo='CRC_J1850', len=8}, Tuple{algo='CRC_CCITT_FALSE', len=16}, Tuple{algo='CRC_ETHERNET', len=32}, Tuple{algo='CRC_0x42F0E1EBA9EA3693', len=64}, Tuple{algo='CRC_8H2F', len=8}, Tuple{algo='CRC_16ARC', len=16}, Tuple{algo='CRC_32P4', len=32}}->select(e : Tuple(algo:String,len:Integer) | e.algo = self.algorithmFamily).len" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+              </acceptableValue>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
         </items>
@@ -492,7 +529,7 @@
           <items label="M">
             <onBind xsi:type="fmob.control:Bind">
               <oclConstraints query="self.m &lt;= self.n" queryType="READ">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/m"/>
@@ -501,14 +538,14 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
           <items label="N">
             <onBind xsi:type="fmob.control:Bind">
               <oclConstraints query="self.m &lt;= self.n" queryType="READ">
-                <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN/n"/>
@@ -517,8 +554,8 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.redundancyHandlings.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
         </items>
@@ -576,14 +613,18 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyCrc}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              </bindTo>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling ">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyMOutOfN}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+              </bindTo>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.7/@items.0">
@@ -594,14 +635,18 @@
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Files from File Proxy Interface" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.files->collect(e : PersistencyFileProxy | Tuple{T=PersistencyFile, shortName=e.shortName, fileName=e.fileName, contentUri=e.contentUri})">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+              </bindTo>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFile, shortName=''}">
-              <classContext href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-              <attrContext xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+              </bindTo>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.10/@items.0">
@@ -615,80 +660,80 @@
       </subSections>
       <subSections label="Persistency Mapping">
         <items xsi:type="fmob.view:Column" label="PersistencyPort-Process Map" editingMethod="None">
-          <onBind xsi:type="fmob.control:MultiBind">
-            <bindings>
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
-            </bindings>
-            <bindings>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
-            </bindings>
+            </scripts>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Deployment" editingMethod="None">
-          <onBind xsi:type="fmob.control:MultiBind">
-            <bindings>
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/keyValueStorage"/>
-            </bindings>
-            <bindings>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/persistencyFileArray"/>
-            </bindings>
+            </scripts>
           </onBind>
           <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Interface" editingMethod="None">
-          <onBind xsi:type="fmob.control:MultiBind">
-            <bindings>
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
               </parents>
-            </bindings>
-            <bindings>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/persistencyFileArray"/>
               </parents>
-            </bindings>
+            </scripts>
           </onBind>
           <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Port" editingMethod="None">
-          <onBind xsi:type="fmob.control:MultiBind">
-            <bindings>
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/portPrototype"/>
               </parents>
-            </bindings>
-            <bindings>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/instancerefs/PortPrototypeInExecutableInstanceRef/targetPortPrototype"/>
               <parents>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/portPrototype"/>
               </parents>
-            </bindings>
+            </scripts>
           </onBind>
           <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Process" editingMethod="None">
-          <onBind xsi:type="fmob.control:MultiBind">
-            <bindings>
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/process"/>
-            </bindings>
-            <bindings>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/process"/>
-            </bindings>
+            </scripts>
           </onBind>
           <activeConditions query="false"/>
         </items>
@@ -776,6 +821,9 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/methods"/>
               </parents>
             </onBind>
+            <activeConditions query="not self.fireAndForget" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+            </activeConditions>
           </items>
           <items label="Possible Errors" editingMethod="Dialog">
             <onBind xsi:type="fmob.control:Bind">
@@ -786,6 +834,9 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/methods"/>
               </parents>
             </onBind>
+            <activeConditions query="not self.fireAndForget" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+            </activeConditions>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Methods.Args">
@@ -815,6 +866,9 @@
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/methods"/>
                 </parents>
               </parents>
+              <acceptableValue query="if self.fireAndForget then Set{'IN'} else Set{'IN', 'OUT', 'INOUT'} endif" queryType="READ">
+                <context href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+              </acceptableValue>
             </onBind>
           </items>
           <items label="Data Type" editingMethod="Dialog">
@@ -885,19 +939,95 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Service Interface"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Interface"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Service Interface">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Interface" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Event"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Event"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Method"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Method"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Field"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Field"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Event" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/VariableDataPrototype"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/events"/>
+                </parents>
+              </bindTo>
+              <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/VariableDataPrototype"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Event" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.4/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/VariableDataPrototype"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Method" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/methods"/>
+                </parents>
+              </bindTo>
+              <context href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Method" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.5/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Field" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/Field"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/fields"/>
+                </parents>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/Field"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Field" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.7/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/Field"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Argument"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Argument"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Argument" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.5/@items.0">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//swcomponent/portinterface/ArgumentDataPrototype"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation/arguments"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface/methods"/>
+                  </parents>
+                </parents>
+              </bindTo>
+              <context href="autosar448.ecore#//swcomponent/portinterface/ArgumentDataPrototype"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Argument" activeColumn="//@editors.1/@sections.0/@subSections.0/@items.6/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//swcomponent/portinterface/ArgumentDataPrototype"/>
+            </onTrigger>
+          </items>
         </actionMenu>
+        <rootObjects href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
       </subSections>
       <subSections label="ApApplication Error">
         <items xsi:type="fmob.view:ColumnGroup" label="Error Domains">
@@ -959,23 +1089,60 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Error Domain"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Error Domain"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Error Domain">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorDomain"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorDomain"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Error Domain" activeColumn="//@editors.1/@sections.0/@subSections.1/@items.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorDomain"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationError"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete ApApplicationError"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationError" activeColumn="//@editors.1/@sections.0/@subSections.1/@items.0/@items.0">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationError"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationError"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete ApApplicationError" activeColumn="//@editors.1/@sections.0/@subSections.1/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationError"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationErrorSet"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete ApApplicationErrorSet"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationErrorSet">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorSet"/>
+              </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorSet"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete ApApplicationErrorSet" activeColumn="//@editors.1/@sections.0/@subSections.1/@items.2/@items.1">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorSet"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
     </sections>
     <sections label="SOME/IP Binding">
       <subSections label="Interface Deployment">
-        <items xsi:type="fmob.view:Column" label="Service Interface" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Service Interface" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
-            <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
-            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/serviceInterface"/>
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/serviceInterface"/>
+            </parents>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments">
@@ -1014,24 +1181,24 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.ElementDeployments">
           <items label="Element">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -1042,8 +1209,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -1054,8 +1221,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -1066,28 +1233,28 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="ID">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/eventId"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/methodId"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/eventId"/>
                 <parents>
@@ -1098,8 +1265,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/methodId"/>
                 <parents>
@@ -1110,8 +1277,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/methodId"/>
                 <parents>
@@ -1122,28 +1289,28 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Protocol" editingMethod="ComboBox">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/transportProtocol"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/transportProtocol"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/transportProtocol"/>
                 <parents>
@@ -1154,8 +1321,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/transportProtocol"/>
                 <parents>
@@ -1166,8 +1333,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/transportProtocol"/>
                 <parents>
@@ -1178,22 +1345,22 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ Event Deployment">
           <items label="Separation Time">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/separationTime"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/separationTime"/>
                 <parents>
@@ -1204,20 +1371,23 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
+            </activeConditions>
           </items>
           <items label="Max. Segment Length">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/maximumSegmentLength"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/maximumSegmentLength"/>
                 <parents>
@@ -1228,20 +1398,23 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
+            </activeConditions>
           </items>
           <items label="Serializer" editingMethod="ComboBox">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/serializer"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment/serializer"/>
                 <parents>
@@ -1252,22 +1425,22 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ Method Deployment">
           <items label="Request Separation Time">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeRequest"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeRequest"/>
                 <parents>
@@ -1278,8 +1451,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeRequest"/>
                 <parents>
@@ -1290,20 +1463,23 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+            </activeConditions>
           </items>
           <items label="Max. Request Segment Length">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthRequest"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthRequest"/>
                 <parents>
@@ -1314,8 +1490,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthRequest"/>
                 <parents>
@@ -1326,20 +1502,23 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+            </activeConditions>
           </items>
           <items label="Response Separation Time">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeResponse"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeResponse"/>
                 <parents>
@@ -1350,8 +1529,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/separationTimeResponse"/>
                 <parents>
@@ -1362,20 +1541,23 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+            </activeConditions>
           </items>
           <items label="Max. Response Segment Length">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthResponse"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthResponse"/>
                 <parents>
@@ -1386,8 +1568,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment/maximumSegmentLengthResponse"/>
                 <parents>
@@ -1398,8 +1580,11 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
+            <activeConditions query="self.transportProtocol.toString() = 'UDP'" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+            </activeConditions>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.EventGroups">
@@ -1423,17 +1608,79 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Deployment"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Deployment"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Deployment" activeColumn="//@editors.1/@sections.1/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterface=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.events->collect(e : VariableDataPrototype | Tuple{shortName=e.shortName, event=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+                <oclConstraints query="self.methods->collect(e : ClientServerOperation | Tuple{shortName=e.shortName, method=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+                <oclConstraints query="self.methods->collect(e : Field | Tuple{shortName=e.shortName, field=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipFieldDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Deployment" activeColumn="//@editors.1/@sections.1/@subSections.0/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Element Deployment"/>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Element Deployment">
+            <onTrigger xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Delete">
+                <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Delete">
+                <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipMethodDeployment"/>
+              </scripts>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Event Group"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Event Group"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Event Group" activeColumn="//@editors.1/@sections.1/@subSections.0/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventGroup"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Event Group" activeColumn="//@editors.1/@sections.1/@subSections.0/@items.5/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventGroup"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Provided Instance">
-        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/AdaptivePlatformServiceInstance/serviceInterfaceDeployment"/>
@@ -1686,12 +1933,67 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance" activeColumn="//@editors.1/@sections.1/@subSections.1/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterfaceDeployment=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.eventDeployments->collect(e : ServiceEventDeployment | Tuple{event=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipEventProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance/eventProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.methodDeployments->collect(e : ServiceMethodDeployment | Tuple{methodResponseProps=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipMethodProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance/eventProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.eventGroups->collect(e : SomeipEventGroup | Tuple{shortName=e.shortName, eventGroup=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipProvidedEventGroup"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance/providedEventGroups"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <scripts xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/serviceinstances/SomeipSdServerServiceInstanceConfig"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance/sdServerConfig"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//system/fibex/fibex4ethernet/serviceinstances/SomeipSdServerServiceInstanceConfig"/>
+                </scripts>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance" activeColumn="//@editors.1/@sections.1/@subSections.1/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Required Instance">
-        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/AdaptivePlatformServiceInstance/serviceInterfaceDeployment"/>
@@ -1886,8 +2188,53 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance" activeColumn="//@editors.1/@sections.1/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterfaceDeployment=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.methodDeployments->collect(e : ServiceMethodDeployment | Tuple{methodRequestProps=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipMethodProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance/methodRequestProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.eventGroups->collect(e : SomeipEventGroup | Tuple{shortName=e.shortName, eventGroup=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipRequiredEventGroup"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance/requiredEventGroups"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <scripts xsi:type="fmob.control:OclQuery" query="Tuple{shortName=''}">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/serviceinstances/SomeipSdClientServiceInstanceConfig"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance/sdClientConfig"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//system/fibex/fibex4ethernet/serviceinstances/SomeipSdServerServiceInstanceConfig"/>
+                </scripts>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance" activeColumn="//@editors.1/@sections.1/@subSections.2/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Instance-Machine Map">
@@ -1930,8 +2277,16 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Machine Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Machine Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Machine Mapping">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/SomeipServiceInstanceToMachineMapping"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Machine Mapping" activeColumn="//@editors.1/@sections.1/@subSections.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/SomeipServiceInstanceToMachineMapping"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Instance-Port Map">
@@ -1964,14 +2319,22 @@
           </onBind>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Port Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Port Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Port Mapping">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/ServiceInstanceToPortPrototypeMapping"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Port Mapping" activeColumn="//@editors.1/@sections.1/@subSections.4/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/ServiceInstanceToPortPrototypeMapping"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
     </sections>
     <sections label="DDS Binding">
       <subSections label="Interface Deployment">
-        <items xsi:type="fmob.view:Column" label="Service Interface" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Service Interface" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/serviceInterface"/>
@@ -1993,24 +2356,24 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.ElementDeployments">
           <items label="Element">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -2021,8 +2384,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -2033,8 +2396,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
                 <parents>
@@ -2045,28 +2408,28 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Protocol" editingMethod="ComboBox">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment/transportProtocols"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment/transportProtocols"/>
                 <parents>
                   <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment/transportProtocols"/>
                 <parents>
@@ -2077,8 +2440,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment/transportProtocols"/>
                 <parents>
@@ -2089,8 +2452,8 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment/transportProtocols"/>
                 <parents>
@@ -2101,7 +2464,7 @@
                     <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
                   </parents>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
         </items>
@@ -2138,17 +2501,83 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Deployment"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Deployment"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Deployment">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterface=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.events->collect(e : VariableDataPrototype | Tuple{shortName=e.shortName, event=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/eventDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+                <oclConstraints query="self.methods->collect(e : ClientServerOperation | Tuple{shortName=e.shortName, method=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/methodDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+                <oclConstraints query="self.methods->collect(e : Field | Tuple{shortName=e.shortName, field=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsFieldDeployment"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/ServiceInterfaceDeployment/fieldDeployments"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+                </oclConstraints>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Deployment">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Element Deployment"/>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Element Deployment" activeColumn="//@editors.1/@sections.2/@subSections.0/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Delete">
+                <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Delete">
+                <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsMethodDeployment"/>
+              </scripts>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New RPC Service"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete RPC Service"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New RPC Service" activeColumn="//@editors.1/@sections.2/@subSections.0/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsRpcServiceDeployment"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment/ddsRpcServices"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete RPC Service" activeColumn="//@editors.1/@sections.2/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsRpcServiceDeployment"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Provided Instance">
-        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/AdaptivePlatformServiceInstance/serviceInterfaceDeployment"/>
@@ -2175,8 +2604,14 @@
           </items>
           <items label="Transport Plugins" editingMethod="Dialog">
             <onBind xsi:type="fmob.control:Bind">
+              <oclConstraints query="self.transportPlugins->size() > 0" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+              </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsServiceInstanceProps/transportPlugins"/>
+              <acceptableValue query="Set{'TCP', 'UDP', 'Shared Memory'}" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+              </acceptableValue>
             </onBind>
           </items>
           <items label="QoS Profile">
@@ -2187,12 +2622,57 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance" activeColumn="//@editors.1/@sections.2/@subSections.1/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterfaceDeployment=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.eventDeployments->collect(e : ServiceEventDeployment | Tuple{event=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsEventQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/eventQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.methodDeployments->collect(e : ServiceMethodDeployment | Tuple{method=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsMethodQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/methodQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.fieldDeployments->collect(e : ServiceFieldDeployment | Tuple{field=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsFieldQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/fieldGetSetQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance" activeColumn="//@editors.1/@sections.2/@subSections.1/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Required Instance">
-        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Deployment" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/AdaptivePlatformServiceInstance/serviceInterfaceDeployment"/>
@@ -2219,8 +2699,14 @@
           </items>
           <items label="Transport Plugins" editingMethod="Dialog">
             <onBind xsi:type="fmob.control:Bind">
+              <oclConstraints query="self.transportPlugins->size() > 0" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+              </oclConstraints>
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsServiceInstanceProps/transportPlugins"/>
+              <acceptableValue query="Set{'TCP', 'UDP', 'Shared Memory'}">
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+              </acceptableValue>
             </onBind>
           </items>
           <items label="QoS Profile">
@@ -2231,8 +2717,53 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance"/>
+          <items xsi:type="fmob.view:MenuItem" label="Generate Service Instance" activeColumn="//@editors.1/@sections.2/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <oclConstraints query="Tuple{shortName='', serviceInterfaceDeployment=self}">
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+                </bindTo>
+                <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+              </oclConstraints>
+              <scripts xsi:type="fmob.control:MultiScript" type="Sequence">
+                <oclConstraints query="self.eventDeployments->collect(e : ServiceEventDeployment | Tuple{event=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsEventQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/eventQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.methodDeployments->collect(e : ServiceMethodDeployment | Tuple{method=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsMethodQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/methodQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+                <oclConstraints query="self.fieldDeployments->collect(e : ServiceFieldDeployment | Tuple{field=e})">
+                  <bindTo>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsFieldQosProps"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance/fieldGetSetQosProps"/>
+                    </parents>
+                  </bindTo>
+                  <context href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+                </oclConstraints>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Instance" activeColumn="//@editors.1/@sections.2/@subSections.2/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Instance-Machine Map">
@@ -2255,8 +2786,16 @@
           </onBind>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Machine Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Machine Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Machine Mapping">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/DdsServiceInstanceToMachineMapping"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Machine Mapping" activeColumn="//@editors.1/@sections.2/@subSections.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/DdsServiceInstanceToMachineMapping"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Instance-Port Map">
@@ -2289,8 +2828,16 @@
           </onBind>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Port Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Port Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Instance-Port Mapping">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/ServiceInstanceToPortPrototypeMapping"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Instance-Port Mapping" activeColumn="//@editors.1/@sections.2/@subSections.4/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancemapping/ServiceInstanceToPortPrototypeMapping"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
     </sections>
@@ -2749,7 +3296,7 @@
         </actionMenu>
       </subSections>
       <subSections label="Deterministic Client">
-        <items xsi:type="fmob.view:Column" label="Process" editingMethod="AutoFill">
+        <items xsi:type="fmob.view:Column" label="Process" editingMethod="None">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
           </onBind>
@@ -3063,163 +3610,163 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Network Endpoint Address">
           <items label="Address">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/ipv4Address"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/ipv6Address"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Prefix (Netmask)">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/networkMask"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/ipAddressPrefixLength"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Router">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/defaultGateway"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/defaultRouter"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="DNS">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/dnsServerAddress"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/dnsServerAddress"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Source" editingMethod="ComboBox">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/ipv4AddressSource"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/ipv6AddressSource"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Keep Behavior" editingMethod="ComboBox">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/ipAddressKeepBehavior"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/ipAddressKeepBehavior"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="TTL">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/ttl"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/hopCount"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
           <items label="Assignment Priority">
-            <onBind xsi:type="fmob.control:MultiBind">
-              <bindings>
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration/assignmentPriority"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
-              <bindings>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
                 <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration/assignmentPriority"/>
                 <parents>
                   <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
                   <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
                 </parents>
-              </bindings>
+              </scripts>
             </onBind>
           </items>
         </items>
@@ -3534,7 +4081,7 @@
       </actionMenu>
     </sections>
     <sections label="Machine State">
-      <items xsi:type="fmob.view:Column" label="Machine" editingMethod="AutoFill">
+      <items xsi:type="fmob.view:Column" label="Machine" editingMethod="None">
         <onBind xsi:type="fmob.control:Bind">
           <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
         </onBind>

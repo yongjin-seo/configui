@@ -9,10 +9,11 @@
         eType="#//Regex" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OclQuery" eSuperTypes="#//Script">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classContext" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attrContext" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryType" eType="#//OclQueryType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindTo" eType="#//Bind"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" interface="true"
       eSuperTypes="#//Script">
@@ -20,7 +21,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tAttribute" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindTo" eType="#//Bind"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Set" abstract="true" interface="true"
       eSuperTypes="#//Action"/>
@@ -41,9 +43,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="onTrigger" eType="#//Script"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiBind" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bindings" upperBound="-1"
-        eType="#//Bind" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiScript" eSuperTypes="#//Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scripts" upperBound="-1"
+        eType="#//Script" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MultiScriptType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OclQueryType">
     <eLiterals name="CREATE" value="1"/>
@@ -53,5 +56,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Regex" eSuperTypes="#//Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiScriptType">
+    <eLiterals name="Choise"/>
+    <eLiterals name="Sequence" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

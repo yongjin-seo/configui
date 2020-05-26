@@ -30,4 +30,12 @@
             genModel="model/FlexiMob.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated FlexiMob -->
+      <package
+            uri="http://autron.hyundai.com/mobilgene/fmob/res"
+            class="FlexiMobResource.FlexiMobResourcePackage"
+            genModel="model/FlexiMob.genmodel"/>
+   </extension>
+
 </plugin>

@@ -17,6 +17,8 @@
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/CheckBox"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/ComboBox"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/Dialog"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/AutoFill"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/None"/>
     </genEnums>
     <genClasses ecoreClass="FlexiMobView.ecore#//Editor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Editor/sections"/>
@@ -63,10 +65,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/regexConstraints"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//OclQuery">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/classContext"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//OclQuery/query"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/attrContext"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//OclQuery/queryType"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/bindTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/context"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Action/tClass"/>
