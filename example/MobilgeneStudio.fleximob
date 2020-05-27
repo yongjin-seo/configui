@@ -61,8 +61,8 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Interface">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabaseInterface, shortName=''}">
-              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Interface" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
@@ -72,16 +72,12 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyDataElement, shortName=''}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
-                <parents>
-                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
-                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
-                </parents>
               </bindTo>
-              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Data Element" activeColumn="//@editors.0/@sections.0/@subSections.0/@items.4/@items.0">
@@ -182,8 +178,8 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create File Proxy Interface">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileProxyInterface, shortName=''}">
-              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy Interface" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
@@ -193,12 +189,12 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileProxy, shortName=''}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
               </bindTo>
-              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxy"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Proxy" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.7/@items.0">
@@ -374,8 +370,8 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Database">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValueDatabase, shortName=''}">
-              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Database" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
@@ -385,21 +381,21 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyCrc}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </bindTo>
-              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling " activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyMOutOfN}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </bindTo>
-              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.7/@items.0">
@@ -409,21 +405,24 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Key-Value Pairs from Key-Value Database Interface" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.dataElements->collect(d : PersistencyDataElement | Tuple{T=PersistencyKeyValuePair, shortName=d.shortName, valueDataType=d.type})">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.dataElements->collect(d : PersistencyDataElement | Tuple{shortName=d.shortName, valueDataType=d.type})">
               <bindTo>
-                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
-                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
+                </parents>
               </bindTo>
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyKeyValuePair, shortName=''}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
               </bindTo>
-              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Pair" activeColumn="//@editors.0/@sections.1/@subSections.0/@items.10/@items.0">
@@ -603,7 +602,9 @@
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create File Array">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFileArray, shortName=''}"/>
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete File Array" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onTrigger xsi:type="fmob.control:Delete">
@@ -612,7 +613,8 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyCrc}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
@@ -620,7 +622,8 @@
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling ">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyRedundancyMOutOfN}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
@@ -634,15 +637,20 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Files from File Proxy Interface" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.files->collect(e : PersistencyFileProxy | Tuple{T=PersistencyFile, shortName=e.shortName, fileName=e.fileName, contentUri=e.contentUri})">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.files->collect(e : PersistencyFileProxy | Tuple{shortName=e.shortName, fileName=e.fileName, contentUri=e.contentUri})">
               <bindTo>
-                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
+                </parents>
               </bindTo>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New File" activeColumn="//@editors.0/@sections.1/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{T=PersistencyFile, shortName=''}">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
               <bindTo>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
@@ -2917,13 +2925,49 @@
         </items>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Create Sw Component"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Sw Component"/>
+        <items xsi:type="fmob.view:MenuItem" label="Create Sw Component">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Sw Component" activeColumn="//@editors.2/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Provided PortPrototype"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Required PortPrototype"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Provided-Required PortPrototype"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete PortPrototype"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Provided PortPrototype" activeColumn="//@editors.2/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/components/PPortPrototype"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/components/SwComponentType/ports"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Required PortPrototype" activeColumn="//@editors.2/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/components/RPortPrototype"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/components/SwComponentType/ports"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Provided-Required PortPrototype" activeColumn="//@editors.2/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/components/PRPortPrototype"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/components/SwComponentType/ports"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete PortPrototype" activeColumn="//@editors.2/@sections.0/@items.1/@items.0 //@editors.2/@sections.0/@items.3/@items.0 //@editors.2/@sections.0/@items.2/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/components/PortPrototype"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
     <sections label="Composition Sw Component">
@@ -2940,8 +2984,16 @@
         </onBind>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Create Composition Sw Component"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Composition Sw Component"/>
+        <items xsi:type="fmob.view:MenuItem" label="Create Composition Sw Component">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/composition/CompositionSwComponentType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Composition Sw Component" activeColumn="//@editors.2/@sections.1/@items.1">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/composition/CompositionSwComponentType"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
     <sections label="Executable">
@@ -2956,6 +3008,9 @@
           <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/Executable"/>
           <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
         </onBind>
+        <activeConditions query="Set{'APPLICATION_LEVEL', 'PLATFORM_LEVEL'}" queryType="READ">
+          <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/Executable"/>
+        </activeConditions>
       </items>
       <items xsi:type="fmob.view:Column" label="Build Type" editingMethod="ComboBox">
         <onBind xsi:type="fmob.control:Bind">
@@ -2994,8 +3049,16 @@
         </onBind>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Create Executable"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Executable"/>
+        <items xsi:type="fmob.view:MenuItem" label="Create Executable">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/Executable"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Executable" activeColumn="//@editors.2/@sections.2/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/Executable"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
     <sections label="Process Definition">
@@ -3132,16 +3195,85 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Process"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Process"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Process">
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <scripts xsi:type="fmob.control:Create">
+                <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Create">
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/ProcessDesign"/>
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/design"/>
+                </bindTo>
+              </scripts>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Process" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New State-dependent Startup Config"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete State-dependent Startup Config"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New State-dependent Startup Config" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/stateDependentStartupConfigs"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete State-dependent Startup Config" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New System Memory Usage"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete System Memory Usage"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Heap Usage"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Heap Usage"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New System Memory Usage" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/SystemMemoryUsage"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//commonstructure/resourceconsumption/ResourceConsumption"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/resourceconsumption/ResourceConsumption/systemMemoryUsages"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig/resourceConsumption"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/stateDependentStartupConfigs"/>
+                  </parents>
+                </parents>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete System Memory Usage" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/SystemMemoryUsage"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Heap Usage" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//commonstructure/resourceconsumption/heapusage/WorstCaseHeapUsage"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//commonstructure/resourceconsumption/ResourceConsumption"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/resourceconsumption/ResourceConsumption/heapUsages"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/StateDependentStartupConfig/resourceConsumption"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/stateDependentStartupConfigs"/>
+                  </parents>
+                </parents>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Heap Usage" activeColumn="//@editors.2/@sections.3/@subSections.0/@items.4/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//commonstructure/resourceconsumption/heapusage/WorstCaseHeapUsage"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Startup Config">
@@ -3300,6 +3432,9 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
           </onBind>
+          <activeConditions query="false" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+          </activeConditions>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deterministic Client">
           <items label="Client">
@@ -3512,11 +3647,40 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Deterministic Client"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Deterministic Client"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Deterministic Client Resource Need"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Deterministic Client Resource Need"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Deterministic Client" activeColumn="//@editors.2/@sections.3/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/DeterministicClient"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/deterministicClient"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Deterministic Client" activeColumn="//@editors.2/@sections.3/@subSections.2/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/DeterministicClient"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Deterministic Client Resource Need" activeColumn="//@editors.2/@sections.3/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/DeterministicClientResourceNeeds"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/ProcessDesign"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/ProcessDesign/deterministicClientResourceNeeds"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/design"/>
+                </parents>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Deterministic Client Resource Need" activeColumn="//@editors.2/@sections.3/@subSections.2/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/DeterministicClientResourceNeeds"/>
+            </onTrigger>
+          </items>
         </actionMenu>
+        <rootObjects href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
       </subSections>
     </sections>
     <sections label="Process-Machine Map">
@@ -3579,11 +3743,31 @@
         </items>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Create Process-Machine Mapping Set"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Process-Machine Mapping Set"/>
+        <items xsi:type="fmob.view:MenuItem" label="Create Process-Machine Mapping Set">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMappingSet"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Process-Machine Mapping Set" activeColumn="//@editors.2/@sections.4/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMappingSet"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Process-Machine Mapping"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Process-Machine Mapping"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Process-Machine Mapping" activeColumn="//@editors.2/@sections.4/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMapping"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMappingSet"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMappingSet/processDesignToMachineDesignMappings"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Process-Machine Mapping" activeColumn="//@editors.2/@sections.4/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMapping"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
   </editors>
@@ -3771,12 +3955,40 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Network Endpoint"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Network Endpoint"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Network Endpoint">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Network Endpoint" activeColumn="//@editors.3/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New IPv4 Address"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New IPv6 Address"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Address"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New IPv4 Address" activeColumn="//@editors.3/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv4Configuration"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New IPv6 Address" activeColumn="//@editors.3/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/Ipv6Configuration"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpoint/networkEndpointAddress"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Address" activeColumn="//@editors.3/@sections.0/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/NetworkEndpointAddress"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Partial Network Cluster">
@@ -3829,11 +4041,31 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create System Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete System Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create System Mapping">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/SystemMapping"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete System Mapping" activeColumn="//@editors.3/@sections.0/@subSections.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//system/SystemMapping"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New PNC Mapping"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete PNC Mapping"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New PNC Mapping" activeColumn="//@editors.3/@sections.0/@subSections.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/pncmapping/PncMapping"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//system/SystemMapping"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//system/SystemMapping/pncMappings"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete PNC Mapping" activeColumn="//@editors.3/@sections.0/@subSections.1/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//system/pncmapping/PncMapping"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
       <subSections label="Network Connection">
@@ -3930,13 +4162,43 @@
           </items>
         </items>
         <actionMenu>
-          <items xsi:type="fmob.view:MenuItem" label="Create Machine Design"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Machine Design"/>
+          <items xsi:type="fmob.view:MenuItem" label="Create Machine Design">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Machine Design" activeColumn="//@editors.3/@sections.0/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign"/>
+            </onTrigger>
+          </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Communication Connector"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Communication Connector"/>
-          <items xsi:type="fmob.view:MenuItem" label="Add New Service Discovery"/>
-          <items xsi:type="fmob.view:MenuItem" label="Delete Service Discovery"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Communication Connector" activeColumn="//@editors.3/@sections.0/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/EthernetCommunicationConnector"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign/communicationConnectors"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Communication Connector" activeColumn="//@editors.3/@sections.0/@subSections.2/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete"/>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Service Discovery" activeColumn="//@editors.3/@sections.0/@subSections.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceDiscovery"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign/serviceDiscoverConfigs"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Service Discovery" activeColumn="//@editors.3/@sections.0/@subSections.2/@items.4/@items.0 //@editors.3/@sections.0/@subSections.2/@items.4/@items.1">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceDiscovery"/>
+            </onTrigger>
+          </items>
         </actionMenu>
       </subSections>
     </sections>
@@ -4065,19 +4327,75 @@
         <items label="Size (Byte)"/>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Create Machine"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Machine"/>
+        <items xsi:type="fmob.view:MenuItem" label="Create Machine">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Machine" activeColumn="//@editors.3/@sections.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Resource Group"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Resource Group"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Resource Group" activeColumn="//@editors.3/@sections.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/ResourceGroup"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/OsModuleInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/OsModuleInstantiation/resourceGroups"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Resource Group" activeColumn="//@editors.3/@sections.1/@items.5/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/ResourceGroup"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Processor"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Processor"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Processor Core"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Processor Core"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Processor" activeColumn="//@editors.3/@sections.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Processor"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/processors"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Processor" activeColumn="//@editors.3/@sections.1/@items.6/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Processor"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Processor Core" activeColumn="//@editors.3/@sections.1/@items.6/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/ProcessorCore"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Processor"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Processor/cores"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/processors"/>
+              </parents>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Processor Core" activeColumn="//@editors.3/@sections.1/@items.6/@items.1">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/ProcessorCore"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Memory Segment"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Memory Segment"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Memory Segment" activeColumn="//@editors.3/@sections.1/@items.0"/>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Memory Segment" activeColumn="//@editors.3/@sections.1/@items.7/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//ecuresource/HwElement"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
     <sections label="Machine State">
@@ -4085,6 +4403,9 @@
         <onBind xsi:type="fmob.control:Bind">
           <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
         </onBind>
+        <activeConditions query="false" queryType="READ">
+          <context href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+        </activeConditions>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="FunctionGroups">
         <items label="Function Group">
@@ -4133,12 +4454,1717 @@
         </items>
       </items>
       <actionMenu>
-        <items xsi:type="fmob.view:MenuItem" label="Add New Function Group"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete Function Group"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Function Group" activeColumn="//@editors.3/@sections.2/@items.0">
+          <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroup"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/functionGroups"/>
+              </bindTo>
+            </scripts>
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclaration"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroupPrototype"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroupPrototype/type"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/functionGroups"/>
+                </parents>
+              </bindTo>
+            </scripts>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Function Group" activeColumn="//@editors.3/@sections.2/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroupPrototype"/>
+          </onTrigger>
+        </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New State"/>
-        <items xsi:type="fmob.view:MenuItem" label="Delete State"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New State">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclaration"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroup"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroup/modeDeclarations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroupPrototype"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroupPrototype/type"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/functionGroups"/>
+                </parents>
+              </parents>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete State">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclaration"/>
+          </onTrigger>
+        </items>
       </actionMenu>
     </sections>
   </editors>
+  <editors label="DataType">
+    <sections label="Application Data Type">
+      <items xsi:type="fmob.view:Column" label="DataType">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Category" editingMethod="ComboBox">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+          <acceptableValue query="if self.oclIsTypeOf(ApplicationPrimitiveDataType) then Set{'VALUE', 'STRING', 'BOOLEAN'} else if self.oclIsTypeOf(ApplicationArrayDataType) then Set{'ARRAY'} else if self.oclIsTypeOf(ApplicationRecordDataType) then Set{'STRUCTURE'} else if self.oclIsTypeOf(ApplicationAssocMapDataType) then Set{'ASSOCIATIVE_MAP'} else Set{''} endif endif endif endif" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+          </acceptableValue>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Array">
+        <items label="Array Size Profile" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <oclConstraints query="Set{'VSA_LINEAR', 'VSA_SQUARE', 'VSA_RECTANGULAR', 'VSA_FULLY_FLEXIBLE'}" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+            </oclConstraints>
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType/dynamicArraySizeProfile"/>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationArrayDataType) and self.category = 'ARRAY'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Composite Element">
+        <items label="Element">
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType/element"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationRecordElement"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/key"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/value"/>
+              </parents>
+            </scripts>
+          </onBind>
+        </items>
+        <items label="Type (ADT)" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype/type"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType/element"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationRecordElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype/type"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype/type"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/key"/>
+              </parents>
+            </scripts>
+            <scripts xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype/type"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/value"/>
+              </parents>
+            </scripts>
+          </onBind>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Record">
+        <items label="Optional" editingMethod="CheckBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationRecordElement"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationRecordElement/isOptional"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationRecordElement)" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Array">
+        <items label="Max #">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/maxNumberOfElements"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </activeConditions>
+        </items>
+        <items label="Size Semantics" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/arraySizeSemantics"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </activeConditions>
+        </items>
+        <items label="Size Handling" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/arraySizeHandling"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </activeConditions>
+        </items>
+        <items label="Index Type (ADT)" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/indexDataType"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement) and self.type.swDataDefProps.SwDataDefPropsVariants.compuMethod.category = 'TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </activeConditions>
+        </items>
+      </items>
+      <actionMenu>
+        <items xsi:type="fmob.view:MenuItem" label="Create Primitive Data Type">
+          <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{category='VALUE'}">
+            <bindTo>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationPrimitiveDataType"/>
+            </bindTo>
+            <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationPrimitiveDataType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Create Struct Data Type">
+          <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{category='STRUCTURE'}">
+            <bindTo>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+            </bindTo>
+            <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Create Array Data Type">
+          <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{category='ARRAY'}">
+            <bindTo>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+            </bindTo>
+            <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Create Associative Map Data Type">
+          <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{category='ASSOCIATIVE_MAP'}">
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+            </bindTo>
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Data Type" activeColumn="//@editors.4/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:Separator"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Data Element" activeColumn="//@editors.4/@sections.0/@items.0">
+          <onTrigger xsi:type="fmob.control:MultiScript">
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationRecordElement"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
+              </bindTo>
+            </scripts>
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType/element"/>
+              </bindTo>
+            </scripts>
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/key"/>
+              </bindTo>
+            </scripts>
+            <scripts xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapElement"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationdatatype/ApplicationAssocMapDataType/value"/>
+              </bindTo>
+            </scripts>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Data Element" activeColumn="//@editors.4/@sections.0/@items.3/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
+          </onTrigger>
+        </items>
+      </actionMenu>
+    </sections>
+    <sections label="Implementation Data Type">
+      <items xsi:type="fmob.view:Column" label="DataType">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Category" editingMethod="ComboBox">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+          <acceptableValue query="if self.oclIsTypeOf(StdCppImplementationDataType) then Set{'VALUE', 'TYPE_REFERENCE', 'STRING', 'STRUCTURE', 'ARRAY', 'VECTOR', 'VARIANT', 'ASSOCIATIVE_MAP', 'ENUMERATION', 'BITFIELD'} else if self.oclIsTypeOf(CustomCppImplementationDataType) then Set{'ARRAY'} else if self.oclIsTypeOf(ApplicationRecordDataType) then Set{'ARRAY', 'VECTOR', 'VARIANT', 'ASSOCIATIVE_MAP'} else Set{''} endif endif" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </acceptableValue>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Namespace">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/namespaces"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Header">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CustomCppImplementationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CustomCppImplementationDataType/headerFile"/>
+        </onBind>
+        <activeConditions query="self.oclIsTypeOf(CustomCppImplementationDataType)" queryType="READ">
+          <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+        </activeConditions>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Type Emitter">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/typeEmitter"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Type Reference">
+        <items label="Type (IDT)" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/typeReference"/>
+          </onBind>
+          <activeConditions query="Set{'TYPE_REFERENCE', 'ENUMERATION', 'BITFIELD'}->includes(self.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Array">
+        <items label="Array Size">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/arraySize"/>
+          </onBind>
+          <activeConditions query="self.category = 'ARRAY'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Record (Elements)">
+        <items label="Element">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+        <items label="Type (IDT)" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier/typeReference"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement/typeReference"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+        <items label="Inplace" editingMethod="CheckBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier/inplace"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement/typeReference"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'STRUCTURE' " queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+        <items label="Optional" editingMethod="CheckBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement/isOptional"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Template Arguments">
+        <items label="Argument">
+          <onBind xsi:type="fmob.control:OclQuery" query="if self.allocator->isEmpty() then 'Template Argument' else 'Allocator' endif" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </onBind>
+          <activeConditions query="false">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+        <items label="Category" editingMethod="CheckBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/category"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+            </parents>
+            <acceptableValue query="Set{'ASSOC_MAP_KEY', 'ASSOC_MAP_VALUE'}" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            </acceptableValue>
+          </onBind>
+          <activeConditions query="self.cppImplementationDataType.category = 'ASSOCIATIVE_MAP'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+        <items label="Type (IDT)" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/templateType"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.allocator->isEmpty() and Set{'VARIANT', 'ARRAY', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+        <items label="Inplace" editingMethod="CheckBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <oclConstraints query="self.templateType.category = 'STRUCTURE' implies not self.inplace" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            </oclConstraints>
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/inplace"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+            </parents>
+          </onBind>
+          <activeConditions query="self.allocator->isEmpty() and Set{'VARIANT', 'ARRAY', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category) and Set{'STRING', 'STRUCTURE', 'VARIANT', 'ARRAY', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.templateType.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Allocator">
+        <items label="Allocator">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/Allocator"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/allocator"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="Set{'STRING', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+        <items label="Category" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/Allocator"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/allocator"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+              </parents>
+            </parents>
+            <acceptableValue query="Set{'MAX_SIZE_HEAP', 'MAX_SIZE_STACK', 'MAX_SIZE_DATASEGMENT'}" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/Allocator"/>
+            </acceptableValue>
+          </onBind>
+          <activeConditions query="Set{'STRING', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+        <items label="Namespace">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/Allocator"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/Allocator/namespaces"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/allocator"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="Set{'STRING', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Enumeration">
+        <items label="Name">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+              <parents>
+                <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+        </items>
+        <items label="Category" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
+            <parents>
+              <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+              <parents>
+                <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                </parents>
+              </parents>
+            </parents>
+            <acceptableValue query="Set{'TEXTTABLE', 'BITFIELD_TEXTTABLE'}">
+              <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+            </acceptableValue>
+          </onBind>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Enumeration.Literals">
+        <items label="Literal">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuConstTextContent"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuConstTextContent/vt"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuConst"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuConst/compuConstContentType"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/compuInverseValue"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                        <parents>
+                          <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                          <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                          <parents>
+                            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                          </parents>
+                        </parents>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Lower Limit">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/lowerLimit"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Upper Limit">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/upperLimit"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="+ Enumeration.BitFields">
+        <items label="Short Label">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/shortLabel"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'BITFIELD_TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Symbol">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/symbol"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'BITFIELD_TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Mask">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/mask"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'BITFIELD_TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Lower Limit">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/lowerLimit"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'BITFIELD_TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+        <items label="Upper Limit">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScale/upperLimit"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuScales/compuScales"/>
+              <parents>
+                <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/Compu/compuContent"/>
+                <parents>
+                  <tClass href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod/compuInternalToPhys"/>
+                  <parents>
+                    <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsConditional"/>
+                    <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefPropsContent/compuMethod"/>
+                    <parents>
+                      <tClass href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps"/>
+                      <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//commonstructure/datadefproperties/SwDataDefProps/SwDataDefPropsVariants"/>
+                      <parents>
+                        <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+                        <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/AutosarDataType/swDataDefProps"/>
+                      </parents>
+                    </parents>
+                  </parents>
+                </parents>
+              </parents>
+            </parents>
+          </onBind>
+          <activeConditions query="self.category = 'BITFIELD_TEXTTABLE'" queryType="READ">
+            <context href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+          </activeConditions>
+        </items>
+      </items>
+    </sections>
+    <sections label="Data Type Map">
+      <items xsi:type="fmob.view:Column" label="DataType Mapping Set">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="DataType Map">
+        <items label="ApplicationDataType" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap/applicationDataType"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet/dataTypeMaps"/>
+            </parents>
+          </onBind>
+        </items>
+        <items label="ImplementationDataType" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap/implementationDataType"/>
+            <parents>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet/dataTypeMaps"/>
+            </parents>
+          </onBind>
+        </items>
+      </items>
+      <actionMenu>
+        <items xsi:type="fmob.view:MenuItem" label="Create Data Type Mapping Set">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Data Type Mapping Set" activeColumn="//@editors.4/@sections.2/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:Separator"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Data Type Map" activeColumn="//@editors.4/@sections.2/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet/dataTypeMaps"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Data Type Map" activeColumn="//@editors.4/@sections.2/@items.1/@items.1 //@editors.4/@sections.2/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+          </onTrigger>
+        </items>
+      </actionMenu>
+    </sections>
+  </editors>
+  <editors label="Log &amp; Trace">
+    <sections label="Log &amp; Trace Instantiation">
+      <items xsi:type="fmob.view:Column" label="Machine" editingMethod="None">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Log &amp; Trace Instantiation">
+        <items label="Module">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+            </parents>
+          </onBind>
+        </items>
+        <items label="Time Base" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/timeBaseResource"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+            </parents>
+          </onBind>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Log &amp; Trace Instantiation.NetworkConfigurations">
+        <items label="Network Config">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/networkConfigurations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </parents>
+          </onBind>
+        </items>
+        <items label="Connector" editingMethod="Dialog">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration/communicationConnector"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/networkConfigurations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </parents>
+            <acceptableValue query="self.oclAsType(ecore::EObject).eContainer().eContainer().oclAsType(autosar40::Machine).machineDesign.communicationConnectors">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/NetworkConfiguration"/>
+            </acceptableValue>
+          </onBind>
+        </items>
+        <items label="TCP Port">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration/tcpPort"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/networkConfigurations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </parents>
+          </onBind>
+        </items>
+        <items label="UDP Port">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration/udpPort"/>
+            <parents>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/networkConfigurations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </parents>
+          </onBind>
+        </items>
+      </items>
+      <actionMenu>
+        <items xsi:type="fmob.view:MenuItem" label="Use Log &amp; Trace Instantiation" activeColumn="//@editors.5/@sections.0/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Disuse Log &amp; Trace Instantiation" activeColumn="//@editors.5/@sections.0/@items.0 //@editors.5/@sections.0/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:Separator"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Network Configuration" activeColumn="//@editors.5/@sections.0/@items.1/@items.0">
+          <onTrigger xsi:type="fmob.control:Create">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+            <bindTo>
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/LogAndTraceInstantiation/networkConfigurations"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine/moduleInstantiations"/>
+              </parents>
+            </bindTo>
+          </onTrigger>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Network Configuration" activeColumn="//@editors.5/@sections.0/@items.2/@items.0">
+          <onTrigger xsi:type="fmob.control:Delete">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/adaptivemoduleimplementation/EthernetNetworkConfiguration"/>
+          </onTrigger>
+        </items>
+      </actionMenu>
+    </sections>
+    <sections label="Process">
+      <items xsi:type="fmob.view:Column" label="Process" editingMethod="None">
+        <onBind xsi:type="fmob.control:Bind">
+          <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+          <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+        </onBind>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Log &amp; Trace Configuration">
+        <items label="Application Id">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/logTraceProcessId"/>
+          </onBind>
+        </items>
+        <items label="Application Desciption">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/logTraceProcessDesc"/>
+          </onBind>
+        </items>
+        <items label="Default Level" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/logTraceDefaultLogLevel"/>
+          </onBind>
+        </items>
+        <items label="Mode" editingMethod="ComboBox">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/logTraceLogModes"/>
+          </onBind>
+        </items>
+        <items label="File Path">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process/logTraceFilePath"/>
+          </onBind>
+          <activeConditions query="self.logTraceLogModes->includes(autosar40::LogTraceLogModeEnum::file)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+          </activeConditions>
+        </items>
+      </items>
+    </sections>
+  </editors>
+  <editors label="PHM">
+    <sections label="PHM Design">
+      <subSections label="PHM Interface">
+        <items xsi:type="fmob.view:Column" label="PHM Interface">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Interface Id">
+          <activeConditions query="not self.oclIsTypeOf(autosar40::PhmRecoveryActionInterface)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+          </activeConditions>
+        </items>
+        <items xsi:type="fmob.view:Column" label="Namespace">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+            <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/portinterface/PortInterface/namespaces"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Checkpoints / Health Statuses">
+          <items label="Name">
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmCheckpoint"/>
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelStatus"/>
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              </scripts>
+            </onBind>
+            <activeConditions query="not self.oclIsTypeOf(autosar40::PhmRecoveryActionInterface)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+            </activeConditions>
+          </items>
+          <items label="Id">
+            <onBind xsi:type="fmob.control:MultiScript">
+              <scripts xsi:type="fmob.control:Bind">
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmCheckpoint"/>
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmCheckpoint/checkpointId"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Bind">
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelStatus"/>
+                <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelStatus/statusId"/>
+              </scripts>
+            </onBind>
+            <activeConditions query="not self.oclIsTypeOf(autosar40::PhmRecoveryActionInterface)" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+            </activeConditions>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create Supervised Entity Interface">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmSupervisedEntityInterface"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Create Health Channel Interface">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelInterface"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Create Recovery Action Interface">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmRecoveryActionInterface"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete PHM Interface" activeColumn="//@editors.6/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Checkpoint" activeColumn="//@editors.6/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmCheckpoint"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmSupervisedEntityInterface"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmSupervisedEntityInterface/checkpoints"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Checkpoint" activeColumn="//@editors.6/@sections.0/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmCheckpoint"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Health Status" activeColumn="//@editors.6/@sections.0/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelStatus"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelInterface"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelInterface/status"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Health Status" activeColumn="//@editors.6/@sections.0/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PhmHealthChannelStatus"/>
+            </onTrigger>
+          </items>
+        </actionMenu>
+      </subSections>
+    </sections>
+    <sections label="PHM Deployment">
+      <subSections label="Supervision Checkpoint">
+        <items xsi:type="fmob.view:Column" label="PHM Contribution">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Global Supervisions">
+          <items label="Global Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Supervision Cycle (ms)">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/supervisionCycle"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Expired Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/expiredSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Local Supervisions">
+          <items label="Local Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Failed Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision/failedSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Supervision Checkpoints">
+          <items label="Supervision Checkpoint">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/checkpoints"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="PHM Checkpoint" editingMethod="Dialog">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint/phmCheckpoint"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/checkpoints"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Process" editingMethod="Dialog">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint"/>
+              <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint/process"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/checkpoints"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <actionMenu>
+          <items xsi:type="fmob.view:MenuItem" label="Create PHM Contribution">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete PHM Contribution" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Global Supervision" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Global Supervision" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Local Supervision" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.1/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Local Supervision" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.2/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:Separator"/>
+          <items xsi:type="fmob.view:MenuItem" label="Add New Supervision Checkpoint" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.0">
+            <onTrigger xsi:type="fmob.control:Create">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint"/>
+              <bindTo>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/checkpoints"/>
+              </bindTo>
+            </onTrigger>
+          </items>
+          <items xsi:type="fmob.view:MenuItem" label="Delete Supervision Checkpoint" activeColumn="//@editors.6/@sections.1/@subSections.0/@items.3/@items.0">
+            <onTrigger xsi:type="fmob.control:Delete">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/SupervisionCheckpoint"/>
+            </onTrigger>
+          </items>
+        </actionMenu>
+      </subSections>
+      <subSections label="Alive Supervision">
+        <items xsi:type="fmob.view:Column" label="PHM Contribution">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Global Supervisions">
+          <items label="Global Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Supervision Cycle (ms)">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/supervisionCycle"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Expired Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/expiredSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Local Supervisions">
+          <items label="Local Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Failed Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision/failedSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+      </subSections>
+      <subSections label="Checkpoint Transition">
+        <items xsi:type="fmob.view:Column" label="PHM Contribution">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Global Supervisions">
+          <items label="Global Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Supervision Cycle (ms)">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/supervisionCycle"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Expired Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/expiredSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Local Supervisions">
+          <items label="Local Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Failed Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision/failedSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+      </subSections>
+      <subSections label="Deadline Supervision">
+        <items xsi:type="fmob.view:Column" label="PHM Contribution">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Global Supervisions">
+          <items label="Global Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Supervision Cycle (ms)">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/supervisionCycle"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Expired Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/expiredSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Local Supervisions">
+          <items label="Local Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Failed Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision/failedSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+      </subSections>
+      <subSections label="Logical Supervision">
+        <items xsi:type="fmob.view:Column" label="PHM Contribution">
+          <onBind xsi:type="fmob.control:Bind">
+            <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+            <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+          </onBind>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Global Supervisions">
+          <items label="Global Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Supervision Cycle (ms)">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/supervisionCycle"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Expired Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/GlobalSupervision/expiredSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/globalSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+        <items xsi:type="fmob.view:ColumnGroup" label="Local Supervisions">
+          <items label="Local Supervision">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+          <items label="Failed Tolerance">
+            <onBind xsi:type="fmob.control:Bind">
+              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision"/>
+              <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/LocalSupervision/failedSupervisionCyclesTolerance"/>
+              <parents>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution/localSupervisions"/>
+              </parents>
+            </onBind>
+          </items>
+        </items>
+      </subSections>
+      <subSections label="Health Channel"/>
+      <subSections label="Action List"/>
+      <subSections label="Arbitration &amp; Rule"/>
+      <subSections label="PHM Contribution-Machine Map"/>
+    </sections>
+  </editors>
+  <editors label="Tsync Configuration">
+    <sections label="Tsync Interface &amp; Connection"/>
+    <sections label="Global Time Domain"/>
+    <sections label="Global Time Master/Slave"/>
+    <sections label="Tsync Instantiation"/>
+    <sections label="TsyncPort-TimeBase Map"/>
+  </editors>
+  <res>
+    <packages packages="System.EthernetCluster">
+      <target href="autosar448.ecore#//system/fibex/fibex4ethernet/ethernettopology/EthernetCluster"/>
+    </packages>
+    <packages packages="System.CompuMethod">
+      <target href="autosar448.ecore#//swcomponent/datatype/computationmethod/CompuMethod"/>
+    </packages>
+    <packages packages="System.StartupConfigSet">
+      <target href="autosar448.ecore#//adaptiveplatform/executionmanifest/StartupConfigSet"/>
+    </packages>
+    <packages packages="System.ProcessToMachineMappingSet">
+      <target href="autosar448.ecore#//adaptiveplatform/systemdesign/ProcessDesignToMachineDesignMappingSet"/>
+    </packages>
+    <packages packages="ApAppDomain">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorDomain"/>
+    </packages>
+    <packages packages="ApAppError">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationError"/>
+    </packages>
+    <packages packages="ApAppErrorSet">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationErrorSet"/>
+    </packages>
+    <packages packages="DataType.ADT">
+      <target href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
+    </packages>
+    <packages packages="DataType.IDT">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+    </packages>
+    <packages packages="DataType.MappingSet">
+      <target href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
+    </packages>
+    <packages packages="Service.Interface">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+    </packages>
+    <packages packages="Service.Someip.Deployment">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
+    </packages>
+    <packages packages="Service.Someip.Instance">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
+    </packages>
+    <packages packages="Service.Someip.Instance">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
+    </packages>
+    <packages packages="Service.Dds.Deployment">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
+    </packages>
+    <packages packages="Service.Dds.Instance">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
+    </packages>
+    <packages packages="Service.Dds.Instance">
+      <target href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
+    </packages>
+    <packages packages="Application.SwComponent">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/AdaptiveApplicationSwComponentType"/>
+    </packages>
+    <packages packages="Application.SwComponent">
+      <target href="autosar448.ecore#//swcomponent/composition/CompositionSwComponentType"/>
+    </packages>
+    <packages packages="Application.Executable">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/applicationstructure/Executable"/>
+    </packages>
+    <packages packages="Application.Process">
+      <target href="autosar448.ecore#//adaptiveplatform/executionmanifest/Process"/>
+    </packages>
+    <packages packages="Application.ProcessDesign">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/processdesign/ProcessDesign"/>
+    </packages>
+    <packages packages="Application.DeterministicClient">
+      <target href="autosar448.ecore#//adaptiveplatform/executionmanifest/DeterministicClient"/>
+    </packages>
+    <packages packages="Machine">
+      <target href="autosar448.ecore#//adaptiveplatform/machinemanifest/Machine"/>
+    </packages>
+    <packages packages="Machine.MachineDesign">
+      <target href="autosar448.ecore#//adaptiveplatform/systemdesign/MachineDesign"/>
+    </packages>
+    <packages packages="Machine.Connector">
+      <target href="autosar448.ecore#//system/fibex/fibexcore/coretopology/CommunicationConnector"/>
+    </packages>
+    <packages packages="Machine.StateGroup">
+      <target href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclarationGroup"/>
+    </packages>
+    <packages packages="Platform.Persistency.Design">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface"/>
+    </packages>
+    <packages packages="Platform.Persistency.Deployment">
+      <target href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment"/>
+    </packages>
+    <packages packages="Platform.Persistency.Mapping">
+      <target href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
+    </packages>
+    <packages packages="Platform.Persistency.Mapping">
+      <target href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+    </packages>
+    <packages packages="Platform.PHM.Design">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PlatformHealthManagementInterface"/>
+    </packages>
+    <packages packages="Platform.PHM.Deployment">
+      <target href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/platformhealthmanagement/PlatformHealthManagementContribution"/>
+    </packages>
+    <packages packages="Platform.Tsync.Interface">
+      <target href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/TimeSynchronizationInterface"/>
+    </packages>
+    <packages packages="Platform.Tsync.Domain">
+      <target href="autosar448.ecore#//system/globaltime/GlobalTimeDomain"/>
+    </packages>
+    <packages packages="Platform.Tsync.Map">
+      <target href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/timesync/TimeSyncPortPrototypeToTimeBaseMapping"/>
+    </packages>
+  </res>
 </fmob:Tool>

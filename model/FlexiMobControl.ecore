@@ -60,5 +60,6 @@
   <eClassifiers xsi:type="ecore:EEnum" name="MultiScriptType">
     <eLiterals name="Choise"/>
     <eLiterals name="Sequence" value="1"/>
+    <eLiterals name="All" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

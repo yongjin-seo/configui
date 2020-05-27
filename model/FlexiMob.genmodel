@@ -8,7 +8,7 @@
   <genPackages prefix="FlexiMob" disposableProviderFactory="true" ecorePackage="FlexiMob.ecore#/">
     <genClasses ecoreClass="FlexiMob.ecore#//Tool">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMob.ecore#//Tool/editors"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMob.ecore#//Tool/res"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMob.ecore#//Tool/res"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="FlexiMobView" ecorePackage="FlexiMobView.ecore#/">
@@ -60,6 +60,10 @@
       <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//OclQueryType/UPDATE"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//OclQueryType/DELETE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobControl.ecore#//MultiScriptType">
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//MultiScriptType/Choise"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//MultiScriptType/Sequence"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Script">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/oclConstraints"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/regexConstraints"/>
@@ -75,7 +79,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Action/tAttribute"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//Create">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//Create/parents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Create/bindTo"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Set"/>
     <genClasses ecoreClass="FlexiMobControl.ecore#//Bind">
@@ -90,8 +94,9 @@
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Triggerable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Triggerable/onTrigger"/>
     </genClasses>
-    <genClasses ecoreClass="FlexiMobControl.ecore#//MultiBind">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//MultiBind/bindings"/>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//MultiScript">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//MultiScript/scripts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//MultiScript/type"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//Regex">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//Regex/regex"/>
@@ -99,11 +104,16 @@
   </genPackages>
   <genPackages prefix="FlexiMobResource" ecorePackage="FlexiMobResource.ecore#/">
     <genClasses ecoreClass="FlexiMobResource.ecore#//Resource">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//Resource/icons"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//Resource/icons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//Resource/packages"/>
     </genClasses>
-    <genClasses ecoreClass="FlexiMobResource.ecore#//ElementIcon">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//ElementIcon/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobResource.ecore#//ElementIcon/path"/>
+    <genClasses ecoreClass="FlexiMobResource.ecore#//Icon">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//Icon/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobResource.ecore#//Icon/path"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexiMobResource.ecore#//PackageInfo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobResource.ecore#//PackageInfo/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobResource.ecore#//PackageInfo/packages"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
