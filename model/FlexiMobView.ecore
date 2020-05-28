@@ -47,7 +47,8 @@
     <eLiterals name="CheckBox" value="1"/>
     <eLiterals name="ComboBox" value="2"/>
     <eLiterals name="Dialog" value="3"/>
-    <eLiterals name="AutoFill" value="9"/>
+    <eLiterals name="Number" value="4"/>
     <eLiterals name="None" value="10"/>
+    <eLiterals name="TimeValue" value="5"/>
   </eClassifiers>
 </ecore:EPackage>
