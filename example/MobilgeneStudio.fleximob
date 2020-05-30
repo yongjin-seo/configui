@@ -4427,7 +4427,7 @@
           </onTrigger>
         </items>
         <items xsi:type="fmob.view:Separator"/>
-        <items xsi:type="fmob.view:MenuItem" label="Add New State" activeColumn="//@editors.2/@sections.2/@items.1/@items.1">
+        <items xsi:type="fmob.view:MenuItem" label="Add New State" activeColumn="//@editors.2/@sections.2/@items.1/@items.1 //@editors.2/@sections.2/@items.1/@items.0">
           <onTrigger xsi:type="fmob.control:Create">
             <tClass href="autosar448.ecore#//commonstructure/modedeclaration/ModeDeclaration"/>
             <bindTo>
@@ -4465,7 +4465,7 @@
         <onBind xsi:type="fmob.control:Bind">
           <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
           <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Identifiable/category"/>
-          <acceptableValue xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(ApplicationPrimitiveDataType) then Set{'VALUE', 'STRING', 'BOOLEAN'} else if self.oclIsTypeOf(ApplicationArrayDataType) then Set{'ARRAY'} else if self.oclIsTypeOf(ApplicationRecordDataType) then Set{'STRUCTURE'} else if self.oclIsTypeOf(ApplicationAssocMapDataType) then Set{'ASSOCIATIVE_MAP'} else Set{''} endif endif endif endif" queryType="READ">
+          <acceptableValue xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(autosar40::ApplicationPrimitiveDataType) then Set{'VALUE', 'STRING', 'BOOLEAN'} else if self.oclIsTypeOf(autosar40::ApplicationArrayDataType) then Set{'ARRAY'} else if self.oclIsTypeOf(autosar40::ApplicationRecordDataType) then Set{'STRUCTURE'} else if self.oclIsTypeOf(autosar40::ApplicationAssocMapDataType) then Set{'ASSOCIATIVE_MAP'} else Set{''} endif endif endif endif" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
           </acceptableValue>
         </onBind>
@@ -4481,7 +4481,7 @@
             <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationArrayDataType/dynamicArraySizeProfile"/>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationArrayDataType) and self.category = 'ARRAY'" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationArrayDataType) and self.category = 'ARRAY'" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationDataType"/>
           </activeConditions>
         </items>
@@ -4570,13 +4570,13 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
             </parents>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationRecordElement)" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationRecordElement)" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
           </activeConditions>
         </items>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="+ Array">
-        <items label="Max #">
+        <items label="Max #" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/maxNumberOfElements"/>
@@ -4585,7 +4585,7 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
             </parents>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationArrayElement)" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
           </activeConditions>
         </items>
@@ -4597,8 +4597,11 @@
               <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::ArraySizeSemanticsEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            </acceptableValue>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationArrayElement)" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
           </activeConditions>
         </items>
@@ -4610,12 +4613,15 @@
               <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::ArraySizeHandlingEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            </acceptableValue>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement)" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationArrayElement)" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
           </activeConditions>
         </items>
-        <items label="Index Type (ADT)" editingMethod="Dialog">
+        <items label="Index Type (ADT)" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement/indexDataType"/>
@@ -4623,8 +4629,11 @@
               <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/ApplicationRecordDataType/elements"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::ApplicationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationArrayElement"/>
+            </acceptableValue>
           </onBind>
-          <activeConditions query="self.oclIsTypeOf(ApplicationArrayElement) and self.type.swDataDefProps.SwDataDefPropsVariants.compuMethod.category = 'TEXTTABLE'" queryType="READ">
+          <activeConditions query="self.oclIsTypeOf(autosar40::ApplicationArrayElement) and self.type.swDataDefProps.SwDataDefPropsVariants.compuMethod.category = 'TEXTTABLE'" queryType="READ">
             <context href="autosar448.ecore#//swcomponent/datatype/dataprototypes/ApplicationCompositeElementDataPrototype"/>
           </activeConditions>
         </items>
@@ -4745,10 +4754,13 @@
         </onBind>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="+ Type Reference">
-        <items label="Type (IDT)" editingMethod="Dialog">
+        <items label="Type (IDT)" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/typeReference"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+            </acceptableValue>
           </onBind>
           <activeConditions query="Set{'TYPE_REFERENCE', 'ENUMERATION', 'BITFIELD'}->includes(self.category)" queryType="READ">
             <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
@@ -4756,7 +4768,7 @@
         </items>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="+ Array">
-        <items label="Array Size">
+        <items label="Array Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/arraySize"/>
@@ -4776,11 +4788,11 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
             </parents>
           </onBind>
-          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
-            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <activeConditions query="self.cppImplementationDataType.category = 'STRUCTURE'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
           </activeConditions>
         </items>
-        <items label="Type (IDT)" editingMethod="Dialog">
+        <items label="Type (IDT)" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier/typeReference"/>
@@ -4792,9 +4804,12 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
               </parents>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
+            </acceptableValue>
           </onBind>
-          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
-            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <activeConditions query="self.cppImplementationDataTypeElement.cppImplementationDataType.category = 'STRUCTURE' and Set{'STRING', 'STRUCTURE', 'ARRAY', 'VECTOR', 'VARIANT', 'ASSOCIATIVE_MAP'}->includes(self.typeReference.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
           </activeConditions>
         </items>
         <items label="Inplace" editingMethod="CheckBox">
@@ -4810,8 +4825,8 @@
               </parents>
             </parents>
           </onBind>
-          <activeConditions query="self.category = 'STRUCTURE' " queryType="READ">
-            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <activeConditions query="self.cppImplementationDataTypeElement.cppImplementationDataType.category = 'STRUCTURE' and Set{'STRING', 'STRUCTURE', 'ARRAY', 'VECTOR', 'VARIANT', 'ASSOCIATIVE_MAP'}->includes(self.typeReference.category)" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElementQualifier"/>
           </activeConditions>
         </items>
         <items label="Optional" editingMethod="CheckBox">
@@ -4823,19 +4838,16 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/subElements"/>
             </parents>
           </onBind>
-          <activeConditions query="self.category = 'STRUCTURE'" queryType="READ">
-            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
+          <activeConditions query="self.cppImplementationDataType.category = 'STRUCTURE'" queryType="READ">
+            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataTypeElement"/>
           </activeConditions>
         </items>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="+ Template Arguments">
-        <items label="Argument">
+        <items label="Argument" editingMethod="None">
           <onBind xsi:type="fmob.control:OclQuery" query="if self.allocator->isEmpty() then 'Template Argument' else 'Allocator' endif" queryType="READ">
             <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
           </onBind>
-          <activeConditions query="false">
-            <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
-          </activeConditions>
         </items>
         <items label="Category" editingMethod="CheckBox">
           <onBind xsi:type="fmob.control:Bind">
@@ -4853,7 +4865,7 @@
             <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
           </activeConditions>
         </items>
-        <items label="Type (IDT)" editingMethod="Dialog">
+        <items label="Type (IDT)" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument/templateType"/>
@@ -4861,6 +4873,9 @@
               <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppImplementationDataType/templateArguments"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
+            </acceptableValue>
           </onBind>
           <activeConditions query="self.allocator->isEmpty() and Set{'VARIANT', 'ARRAY', 'VECTOR', 'ASSOCIATIVE_MAP'}->include(self.cppImplementationDataType.category)" queryType="READ">
             <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/cppimplementationdatatype/CppTemplateArgument"/>
@@ -5267,7 +5282,7 @@
         </onBind>
       </items>
       <items xsi:type="fmob.view:ColumnGroup" label="DataType Map">
-        <items label="ApplicationDataType" editingMethod="Dialog">
+        <items label="ApplicationDataType" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap/applicationDataType"/>
@@ -5275,9 +5290,12 @@
               <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet/dataTypeMaps"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::ApplicationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+            </acceptableValue>
           </onBind>
         </items>
-        <items label="ImplementationDataType" editingMethod="Dialog">
+        <items label="ImplementationDataType" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap/implementationDataType"/>
@@ -5285,6 +5303,9 @@
               <tClass href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMappingSet/dataTypeMaps"/>
             </parents>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//swcomponent/datatype/datatypes/DataTypeMap"/>
+            </acceptableValue>
           </onBind>
         </items>
       </items>
@@ -5326,7 +5347,7 @@
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Sustained Size">
+        <items xsi:type="fmob.view:Column" label="Sustained Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/minimumSustainedSize"/>
@@ -5336,12 +5357,18 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/redundancy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyRedundancyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/updateStrategy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyCollectionLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Data Elements">
@@ -5355,7 +5382,7 @@
               </parents>
             </onBind>
           </items>
-          <items label="Data Type (IDT)" editingMethod="Dialog">
+          <items label="Data Type (IDT)" editingMethod="ComboBox">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/datatype/dataprototypes/AutosarDataPrototype/type"/>
@@ -5363,6 +5390,9 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+              </acceptableValue>
             </onBind>
           </items>
           <items label="Update Strategy" editingMethod="ComboBox">
@@ -5373,6 +5403,9 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyKeyValueDatabaseInterface/dataElements"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyElementLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyDataElement"/>
+              </acceptableValue>
             </onBind>
           </items>
         </items>
@@ -5427,7 +5460,7 @@
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/encoding"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Sustained Size">
+        <items xsi:type="fmob.view:Column" label="Sustained Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/minimumSustainedSize"/>
@@ -5437,15 +5470,21 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/redundancy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyRedundancyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Update Strategy" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyInterface/updateStrategy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyCollectionLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+            </acceptableValue>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Max #Files">
+        <items xsi:type="fmob.view:Column" label="Max #Files" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/maxNumberOfFiles"/>
@@ -5490,6 +5529,9 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface/fileProxies"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyElementLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/PersistencyFileProxyInterface"/>
+              </acceptableValue>
             </onBind>
           </items>
         </items>
@@ -5531,11 +5573,14 @@
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Related Interface " editingMethod="Dialog"/>
-        <items xsi:type="fmob.view:Column" label="Process" editingMethod="Dialog">
+        <items xsi:type="fmob.view:Column" label="Related Interface " editingMethod="None"/>
+        <items xsi:type="fmob.view:Column" label="Process" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/process"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::Process.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
@@ -5548,15 +5593,18 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/updateStrategy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyCollectionLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            </acceptableValue>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Max. Size">
+        <items xsi:type="fmob.view:Column" label="Max. Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/maximumAllowedSize"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Min. Size">
+        <items xsi:type="fmob.view:Column" label="Min. Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/minimumSustainedSize"/>
@@ -5564,7 +5612,7 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling" editingMethod="None">
-            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
+            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onBind>
           </items>
@@ -5572,6 +5620,9 @@
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling/scope"/>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyRedundancyHandlingScopeEnum.oclAsType(ecore::EEnum).eLiterals->select(e : ecore::EEnumLiteral | e.value &lt;> 2)" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
+              </acceptableValue>
             </onBind>
           </items>
         </items>
@@ -5588,7 +5639,7 @@
                 <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </acceptableValue>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
@@ -5604,13 +5655,13 @@
                 <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </acceptableValue>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="+ M-out-of-N">
-          <items label="M">
+          <items label="M" editingMethod="Number">
             <onBind xsi:type="fmob.control:Bind">
               <constraints>
                 <constraint xsi:type="fmob.control:OclQuery" query="self.m &lt;= self.n" queryType="READ">
@@ -5624,11 +5675,11 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyMOutOfN)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
-          <items label="N">
+          <items label="N" editingMethod="Number">
             <onBind xsi:type="fmob.control:Bind">
               <constraints>
                 <constraint xsi:type="fmob.control:OclQuery" query="self.m &lt;= self.n" queryType="READ">
@@ -5642,7 +5693,7 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyMOutOfN)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
@@ -5658,7 +5709,7 @@
               </parents>
             </onBind>
           </items>
-          <items label="Data Type (IDT)" editingMethod="Dialog">
+          <items label="Data Type (IDT)" editingMethod="ComboBox">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair/valueDataType"/>
@@ -5666,6 +5717,9 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::CppImplementationDataType.allInstances()" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </acceptableValue>
             </onBind>
           </items>
           <items label="Init Value" editingMethod="Dialog">
@@ -5686,13 +5740,25 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase/keyValuePairs"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyElementLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValuePair"/>
+              </acceptableValue>
             </onBind>
           </items>
         </items>
         <actionMenu>
           <items xsi:type="fmob.view:MenuItem" label="Create Key-Value Database">
-            <onTrigger xsi:type="fmob.control:Create">
-              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+            <onTrigger xsi:type="fmob.control:MultiScript" type="Sequence">
+              <scripts xsi:type="fmob.control:Create">
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+              </scripts>
+              <scripts xsi:type="fmob.control:Create">
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyKeyValueDatabase"/>
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping/keyValueStorage"/>
+                </bindTo>
+              </scripts>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Key-Value Database" activeColumn="//@editors.4/@sections.1/@subSections.0/@items.0">
@@ -5762,13 +5828,14 @@
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Related Interface" editingMethod="Dialog">
-          <onBind xsi:type="fmob.control:Bind"/>
-        </items>
-        <items xsi:type="fmob.view:Column" label="Process" editingMethod="Dialog">
+        <items xsi:type="fmob.view:Column" label="Related Interface" editingMethod="None"/>
+        <items xsi:type="fmob.view:Column" label="Process" editingMethod="ComboBox">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/process"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::Process.allInstances()" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            </acceptableValue>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Uri">
@@ -5781,15 +5848,18 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/updateStrategy"/>
+            <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyCollectionLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+            </acceptableValue>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Max. Size">
+        <items xsi:type="fmob.view:Column" label="Max. Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/maximumAllowedSize"/>
           </onBind>
         </items>
-        <items xsi:type="fmob.view:Column" label="Min. Size">
+        <items xsi:type="fmob.view:Column" label="Min. Size" editingMethod="Number">
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/minimumSustainedSize"/>
@@ -5797,11 +5867,11 @@
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Redundancy Handlings">
           <items label="Redundancy Handling" editingMethod="None">
-            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
+            <onBind xsi:type="fmob.control:OclQuery" query="if self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc) then 'CRC' else 'M-out-of-N' endif" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
             </onBind>
           </items>
-          <items label="Scope" editingMethod="ComboBox">
+          <items label="Scope" editingMethod="None">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyHandling/scope"/>
@@ -5821,7 +5891,7 @@
                 <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </acceptableValue>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc)" queryType="READ">
               <creationType>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
               </creationType>
@@ -5840,7 +5910,7 @@
                 <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
               </acceptableValue>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyCrc)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyCrc)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
             </activeConditions>
           </items>
@@ -5860,7 +5930,7 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyMOutOfN)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
@@ -5878,7 +5948,7 @@
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
               </parents>
             </onBind>
-            <activeConditions query="self.oclIsTypeOf(PersistencyRedundancyMOutOfN)" queryType="READ">
+            <activeConditions query="self.oclIsTypeOf(autosar40::PersistencyRedundancyMOutOfN)" queryType="READ">
               <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
             </activeConditions>
           </items>
@@ -5922,6 +5992,9 @@
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
                 <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray/files"/>
               </parents>
+              <acceptableValue xsi:type="fmob.control:OclQuery" query="autosar40::PersistencyElementLevelUpdateStrategyEnum.oclAsType(ecore::EEnum).eLiterals" queryType="READ">
+                <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
+              </acceptableValue>
             </onBind>
           </items>
         </items>
@@ -5938,21 +6011,27 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Add New CRC Redundancy Handling" activeColumn="//@editors.4/@sections.1/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:Create">
-              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
-              <bindTo>
-                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
-              </bindTo>
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{scope=autosar40::PersistencyRedundancyHandlingScopeEnum.oclAsType(ecore::EEnum).eLiterals->select(e : ecore::EEnumLiteral | e.value = 2)}">
+              <creationType>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyCrc"/>
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                </bindTo>
+              </creationType>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Add New M-out-of-N Redundancy Handling ">
-            <onTrigger xsi:type="fmob.control:Create">
-              <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
-              <bindTo>
-                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
-                <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
-              </bindTo>
+            <onTrigger xsi:type="fmob.control:OclQuery" query="Tuple{scope=autosar40::PersistencyRedundancyHandlingScopeEnum.oclAsType(ecore::EEnum).eLiterals->select(e : ecore::EEnumLiteral | e.value = 2)}">
+              <creationType>
+                <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyRedundancyMOutOfN"/>
+                <bindTo>
+                  <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
+                  <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyDeployment/redundancyHandlings"/>
+                </bindTo>
+              </creationType>
+              <context href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFileArray"/>
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:MenuItem" label="Delete Redundancy Handling" activeColumn="//@editors.4/@sections.1/@subSections.1/@items.7/@items.0">
@@ -5962,7 +6041,7 @@
           </items>
           <items xsi:type="fmob.view:Separator"/>
           <items xsi:type="fmob.view:MenuItem" label="Generate Files from File Proxy Interface" activeColumn="//@editors.4/@sections.1/@subSections.1/@items.0">
-            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.files->collect(e : PersistencyFileProxy | Tuple{shortName=e.shortName, fileName=e.fileName, contentUri=e.contentUri})">
+            <onTrigger xsi:type="fmob.control:OclQuery" query="self.relatedInterface.files->collect(e : autosar40::PersistencyFileProxy | Tuple{shortName=e.shortName, fileName=e.fileName, contentUri=e.contentUri})">
               <creationType>
                 <tClass href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyFile"/>
                 <bindTo>
@@ -6015,7 +6094,6 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/persistencyFileArray"/>
             </scripts>
           </onBind>
-          <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Persistency Interface" editingMethod="None">
           <onBind xsi:type="fmob.control:MultiScript">
@@ -6034,7 +6112,6 @@
               </parents>
             </scripts>
           </onBind>
-          <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Port" editingMethod="None">
           <onBind xsi:type="fmob.control:MultiScript">
@@ -6055,7 +6132,6 @@
               </parents>
             </scripts>
           </onBind>
-          <activeConditions query="false"/>
         </items>
         <items xsi:type="fmob.view:Column" label="Process" editingMethod="None">
           <onBind xsi:type="fmob.control:MultiScript">
@@ -6068,7 +6144,6 @@
               <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping/process"/>
             </scripts>
           </onBind>
-          <activeConditions query="false"/>
         </items>
         <rootObjects href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToKeyValueDatabaseMapping"/>
         <rootObjects href="autosar448.ecore#//adaptiveplatform/platformmoduledeployment/persistency/PersistencyPortPrototypeToFileArrayMapping"/>
