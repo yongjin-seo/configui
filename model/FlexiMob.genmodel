@@ -17,8 +17,9 @@
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/CheckBox"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/ComboBox"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/Dialog"/>
-      <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/AutoFill"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/Number"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/None"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobView.ecore#//CellEditorType/TimeValue"/>
     </genEnums>
     <genClasses ecoreClass="FlexiMobView.ecore#//Editor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//Editor/sections"/>
@@ -63,15 +64,15 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="FlexiMobControl.ecore#//MultiScriptType">
       <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//MultiScriptType/Choise"/>
       <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//MultiScriptType/Sequence"/>
+      <genEnumLiterals ecoreEnumLiteral="FlexiMobControl.ecore#//MultiScriptType/All"/>
     </genEnums>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Script">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/oclConstraints"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/regexConstraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Script/constraints"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//OclQuery">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//OclQuery/query"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//OclQuery/queryType"/>
-      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/bindTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/creationType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//OclQuery/context"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Action">
@@ -85,6 +86,8 @@
     <genClasses ecoreClass="FlexiMobControl.ecore#//Bind">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Bind/parents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Bind/acceptableValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Bind/convertToString"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Bind/convertToArxml"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//Delete"/>
     <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Bindable">
@@ -100,6 +103,10 @@
     </genClasses>
     <genClasses ecoreClass="FlexiMobControl.ecore#//Regex">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobControl.ecore#//Regex/regex"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FlexiMobControl.ecore#//Constraint"/>
+    <genClasses ecoreClass="FlexiMobControl.ecore#//Constraints">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FlexiMobControl.ecore#//Constraints/constraint"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="FlexiMobResource" ecorePackage="FlexiMobResource.ecore#/">

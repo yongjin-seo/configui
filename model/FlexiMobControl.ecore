@@ -29,6 +29,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="acceptableValue" eType="#//Constraint"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="convertToString" eType="#//OclQuery"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="convertToArxml" eType="#//OclQuery"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bindable" abstract="true" interface="true">
