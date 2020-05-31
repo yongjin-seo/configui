@@ -13,6 +13,12 @@
           <onBind xsi:type="fmob.control:Bind">
             <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
             <tAttribute xsi:type="ecore:EReference" href="autosar448.ecore#//swcomponent/portinterface/PortInterface/namespaces"/>
+            <convertToString query="self.namespaces->iterate(e : autosar40::SymbolProps; result : String = '' | if result.size() = 0 then result.concat(e.symbol) else result.concat('::').concat(e.symbol) endif)&#xA;" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+            </convertToString>
+            <convertToArxml query="let value : String = %VALUE% in value.tokenize('::')->collect(e : String | Tuple{symbol=e})" queryType="READ">
+              <context href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ServiceInterface"/>
+            </convertToArxml>
           </onBind>
         </items>
         <items xsi:type="fmob.view:Column" label="Major Version" editingMethod="Number">
@@ -28,7 +34,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Events">
-          <items label="Event">
+          <items label="Event" parent="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//swcomponent/datatype/dataprototypes/VariableDataPrototype"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -53,7 +59,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Methods">
-          <items label="Method">
+          <items label="Method" parent="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//swcomponent/portinterface/ClientServerOperation"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -101,7 +107,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Methods.Args">
-          <items label="Argument">
+          <items label="Argument" parent="//@editors.0/@sections.0/@subSections.0/@items.5/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//swcomponent/portinterface/ArgumentDataPrototype"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -151,7 +157,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Fields">
-          <items label="Field">
+          <items label="Field" parent="//@editors.0/@sections.0/@subSections.0/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/Field"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -365,7 +371,7 @@
             </onTrigger>
           </items>
           <items xsi:type="fmob.view:Separator"/>
-          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationError" activeColumn="//@editors.0/@sections.0/@subSections.1/@items.0/@items.0">
+          <items xsi:type="fmob.view:MenuItem" label="Create ApApplicationError">
             <onTrigger xsi:type="fmob.control:Create">
               <tClass href="autosar448.ecore#//adaptiveplatform/applicationdesign/portinterface/ApApplicationError"/>
             </onTrigger>
@@ -401,7 +407,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments">
-          <items label="Deployment">
+          <items label="Deployment" parent="//@editors.0/@sections.1/@subSections.0/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipServiceInterfaceDeployment"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -435,7 +441,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.ElementDeployments">
-          <items label="Element">
+          <items label="Element" parent="//@editors.0/@sections.1/@subSections.0/@items.1/@items.0">
             <onBind xsi:type="fmob.control:MultiScript">
               <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventDeployment"/>
@@ -867,7 +873,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.EventGroups">
-          <items label="Event Group">
+          <items label="Event Group" parent="//@editors.0/@sections.1/@subSections.0/@items.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/SomeipEventGroup"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1030,7 +1036,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances">
-          <items label="Instance">
+          <items label="Instance" parent="//@editors.0/@sections.1/@subSections.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/ProvidedSomeipServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1181,7 +1187,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances.ProvidedEventGroups">
-          <items label="Provided Event Group">
+          <items label="Provided Event Group" parent="//@editors.0/@sections.1/@subSections.1/@items.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipProvidedEventGroup"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1380,7 +1386,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances">
-          <items label="Instance">
+          <items label="Instance" parent="//@editors.0/@sections.1/@subSections.2/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/RequiredSomeipServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1489,7 +1495,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances.RequiredEventGroups">
-          <items label="Required Event Group">
+          <items label="Required Event Group" parent="//@editors.0/@sections.1/@subSections.2/@items.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/SomeipRequiredEventGroup"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1753,7 +1759,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments">
-          <items label="Deployment">
+          <items label="Deployment" parent="//@editors.0/@sections.2/@subSections.0/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsServiceInterfaceDeployment"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -1767,7 +1773,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.ElementDeployments">
-          <items label="Element">
+          <items label="Element" parent="//@editors.0/@sections.2/@subSections.0/@items.1/@items.0">
             <onBind xsi:type="fmob.control:MultiScript">
               <scripts xsi:type="fmob.control:Bind">
                 <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsEventDeployment"/>
@@ -1896,7 +1902,7 @@
           </items>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Deployments.RPCServices">
-          <items label="RPC Service">
+          <items label="RPC Service" parent="//@editors.0/@sections.2/@subSections.0/@items.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinterfacedeployment/DdsRpcServiceDeployment"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -2047,7 +2053,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances">
-          <items label="Instance">
+          <items label="Instance" parent="//@editors.0/@sections.2/@subSections.1/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsProvidedServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
@@ -2161,7 +2167,7 @@
           </onBind>
         </items>
         <items xsi:type="fmob.view:ColumnGroup" label="Instances">
-          <items label="Instance">
+          <items label="Instance" parent="//@editors.0/@sections.2/@subSections.2/@items.0">
             <onBind xsi:type="fmob.control:Bind">
               <tClass href="autosar448.ecore#//adaptiveplatform/serviceinstancemanifest/serviceinstancedeployment/DdsRequiredServiceInstance"/>
               <tAttribute xsi:type="ecore:EAttribute" href="autosar448.ecore#//genericstructure/generaltemplateclasses/identifiable/Referrable/shortName"/>
