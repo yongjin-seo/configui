@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FlexiMobControl" nsURI="http://autron.hyundai.com/mobilgene/fmob/control"
+    nsPrefix="fmob.control">
+  <eClassifiers xsi:type="ecore:EClass" name="Script" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" eType="#//Constraints"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OclQuery" eSuperTypes="#//Script #//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryType" eType="#//OclQueryType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creationType" eType="#//Create"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" interface="true"
+      eSuperTypes="#//Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tAttribute" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindTo" eType="#//Bind"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Set" abstract="true" interface="true"
+      eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bind" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parents" eType="#//Bind"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acceptableValue" eType="#//Constraint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="convertToString" eType="#//OclQuery"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="convertToArxml" eType="#//OclQuery"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bindable" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onBind" eType="#//Script"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeConditions" upperBound="-1"
+        eType="#//OclQuery" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Triggerable" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onTrigger" eType="#//Script"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiScript" eSuperTypes="#//Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scripts" upperBound="-1"
+        eType="#//Script" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MultiScriptType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OclQueryType">
+    <eLiterals name="CREATE" value="1"/>
+    <eLiterals name="READ" value="2"/>
+    <eLiterals name="UPDATE" value="3"/>
+    <eLiterals name="DELETE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Regex" eSuperTypes="#//Script #//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiScriptType">
+    <eLiterals name="Choise"/>
+    <eLiterals name="Sequence" value="1"/>
+    <eLiterals name="All" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraints">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

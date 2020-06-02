@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmob:Tool xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fmob="http://autron.hyundai.com/mobilgene/fmob" xmlns:fmob.control="http://autron.hyundai.com/mobilgene/fmob/control" xmlns:fmob.model="http://autron.hyundai.com/mobilgene/fmob/model" xmlns:fmob.view="http://autron.hyundai.com/mobilgene/fmob/view">
+  <editors label="Service">
+    <sections label="Service Interface">
+      <items xsi:type="fmob.view:Column" label="Service Interface" iconVisible="true">
+        <onDraw>
+          <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.0/@attributes.0"/>
+        </onDraw>
+      </items>
+      <items xsi:type="fmob.view:Column" label="Namespace">
+        <onDraw>
+          <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.0/@attributes.1"/>
+        </onDraw>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Events">
+        <items label="Event" iconVisible="true">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.1/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items label="Data Type">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.1/@attributes.1"/>
+          </onDraw>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Methods">
+        <items label="Method" iconVisible="true">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.2/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items label="Fire &amp; Forget">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.2/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items label="Possible Error Sets">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.2/@attributes.4"/>
+          </onDraw>
+        </items>
+        <items label="Possible Errors ">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.2/@attributes.3"/>
+          </onDraw>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Methods.Args">
+        <items label="Argument">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.4/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items label="Dir">
+          <onDraw>
+            <target xsi:type="fmob.model:ArEnumAttribute" href="Model.fleximob#//@models.0/@classes.4/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items label="Data Type">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.4/@attributes.2"/>
+          </onDraw>
+        </items>
+      </items>
+      <items xsi:type="fmob.view:ColumnGroup" label="Fields">
+        <items label="Field" iconVisible="true">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.3/@attributes.0"/>
+          </onDraw>
+        </items>
+        <items label="Data Type">
+          <onDraw>
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.3/@attributes.1"/>
+          </onDraw>
+        </items>
+        <items label="Getter">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.3/@attributes.2"/>
+          </onDraw>
+        </items>
+        <items label="Setter">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.3/@attributes.3"/>
+          </onDraw>
+        </items>
+        <items label="Notifier">
+          <onDraw>
+            <target xsi:type="fmob.model:ArPrimitiveAttribute" href="Model.fleximob#//@models.0/@classes.3/@attributes.4"/>
+          </onDraw>
+        </items>
+      </items>
+      <actionMenu>
+        <items xsi:type="fmob.view:MenuItem" label="Create Service Interface">
+          <onClick xsi:type="fmob.control:Create">
+            <target href="Model.fleximob#//@models.0/@classes.0"/>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Service Interface" activeColumn="//@editors.0/@sections.0/@items.0">
+          <onClick xsi:type="fmob.control:Delete">
+            <target href="Model.fleximob#//@models.0/@classes.0"/>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:Separator"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Event" activeColumn="//@editors.0/@sections.0/@items.0">
+          <onClick xsi:type="fmob.control:SetWithCreation">
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.0/@attributes.2"/>
+            <creation>
+              <target href="Model.fleximob#//@models.0/@classes.1"/>
+            </creation>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Event" activeColumn="//@editors.0/@sections.0/@items.2/@items.0">
+          <onClick xsi:type="fmob.control:Delete">
+            <target href="Model.fleximob#//@models.0/@classes.1"/>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Method" activeColumn="//@editors.0/@sections.0/@items.0">
+          <onClick xsi:type="fmob.control:SetWithCreation">
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.0/@attributes.3"/>
+            <creation>
+              <target href="Model.fleximob#//@models.0/@classes.2"/>
+            </creation>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Method" activeColumn="//@editors.0/@sections.0/@items.3/@items.0">
+          <onClick xsi:type="fmob.control:Delete">
+            <target href="Model.fleximob#//@models.0/@classes.2"/>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Field" activeColumn="//@editors.0/@sections.0/@items.0">
+          <onClick xsi:type="fmob.control:SetWithCreation">
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.0/@attributes.4"/>
+            <creation>
+              <target href="Model.fleximob#//@models.0/@classes.3"/>
+            </creation>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Field" activeColumn="//@editors.0/@sections.0/@items.5/@items.0">
+          <onClick xsi:type="fmob.control:Delete">
+            <target href="Model.fleximob#//@models.0/@classes.3"/>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:Separator"/>
+        <items xsi:type="fmob.view:MenuItem" label="Add New Argument" activeColumn="//@editors.0/@sections.0/@items.3/@items.0">
+          <onClick xsi:type="fmob.control:SetWithCreation">
+            <target xsi:type="fmob.model:ArRefAttribute" href="Model.fleximob#//@models.0/@classes.2/@attributes.1"/>
+            <creation>
+              <target href="Model.fleximob#//@models.0/@classes.4"/>
+            </creation>
+          </onClick>
+        </items>
+        <items xsi:type="fmob.view:MenuItem" label="Delete Argument" activeColumn="//@editors.0/@sections.0/@items.4/@items.0">
+          <onClick xsi:type="fmob.control:Delete">
+            <target href="Model.fleximob#//@models.0/@classes.4"/>
+          </onClick>
+        </items>
+      </actionMenu>
+    </sections>
+  </editors>
+</fmob:Tool>

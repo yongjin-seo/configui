@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FlexiMob" nsURI="http://autron.hyundai.com/mobilgene/fmob" nsPrefix="fmob">
+  <eClassifiers xsi:type="ecore:EClass" name="Tool">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editors" upperBound="-1"
+        eType="ecore:EClass FlexiMobView.ecore#//Editor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="res" eType="ecore:EClass FlexiMobResource.ecore#//Resource"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
