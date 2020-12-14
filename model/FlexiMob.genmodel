@@ -51,6 +51,7 @@
     <genClasses ecoreClass="FlexiMobView.ecore#//MenuItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//MenuItem/label"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexiMobView.ecore#//MenuItem/activeColumn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexiMobView.ecore#//MenuItem/isPackageableElement"/>
     </genClasses>
     <genClasses ecoreClass="FlexiMobView.ecore#//Separator"/>
     <genClasses image="false" ecoreClass="FlexiMobView.ecore#//MenuComponent"/>
